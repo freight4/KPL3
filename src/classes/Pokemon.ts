@@ -1,4 +1,21 @@
-import { Species } from "../types/Species";
+import TC from "../outputs/typechart.json";
+
+function multiplyIntersect(a: Record<string, number>, b: Record<string, number>) {
+  const result: Record<string, number> = {};
+
+  const keys = new Set([...Object.keys(a), ...Object.keys(b)]);
+
+  for (const key of keys) {
+    const av = a[key] ?? 1;
+    const bv = b[key] ?? 1;
+    result[key] = av * bv;
+  }
+
+  return result;
+}
+
+type TypeChart = Record<string, Record<string, number>>;
+const typechart = TC as TypeChart
 
 const TIER_POINTS: Record<string, number> = {
   "OU": 10, 
@@ -21,10 +38,12 @@ export class Pokemon {
   name: string;
   num: number;
   tier: string;
+  forme: string;
   types: string[];
   baseStats: Record<string, number>;
   abilities: Record<string, string>;
   isTeraCaptain: boolean;
+  abilityDefenses: Record<string, number>;
 
   constructor(species: any) {
     // this.name = species.name;
@@ -35,6 +54,8 @@ export class Pokemon {
      
     this.name = String(species.name);
     this.num = Number(species.num);
+    this.tier = species.tier;
+    this.forme = species.forme;
     this.types = Array.isArray(species.types) ? species.types.slice():  [];
     this.baseStats = {
       hp : species.baseStats?.hp ?? 0,
@@ -45,27 +66,93 @@ export class Pokemon {
       spe : species.baseStats?.spe ?? 0,
     }
     this.abilities = species.abilities ?? {};
-    this.tier = species.tier;
-    this.isTeraCaptain = false;
+    
+    this.isTeraCaptain = true;
+    this.abilityDefenses = {};
   }
 
   
   
-  get tier_points() {
+  get tierCost() {
     return TIER_POINTS[this.tier] ?? 0;
   }
 
-  get tera_points() {
+  get teraCost() {
     if (!this.isTeraCaptain) return 0;
-    if (this.tier === "OU") return 2;
-    return 1;
+    else if (this.tier === "OU") return 2;
+    else if (["ZUBL", "ZU", "NFE", "LC"].includes(this.tier)) return 0.5;
+    else return 1;
   }
 
-  get points() {
-    return this.tier_points + this.tera_points;
+  get totalCost() {
+    return this.tierCost + this.teraCost;
   }
 
-  get totalStats() {
+  get baseStatTotal() {
     return Object.values(this.baseStats).reduce((a, b) => a + b, 0);
+  }
+
+  get effectiveBaseStatTotal() {
+    const bst = Object.values(this.baseStats).reduce((a, b) => a + b, 0);
+    const { atk, spa } = this.baseStats;
+    return bst - Math.min(atk, spa);
+  }
+
+  get spritePath(): string {
+    // Angular serves /assets/... relative to index.html
+    if ("".includes(this.forme))
+      return `assets/sprite_folder/sprites/${this.num}.png`;
+    else
+      return `assets/sprite_folder/sprites/${this.num}_${this.forme}.png`;
+  }
+
+  // get defensiveTypes() {
+  //     if (Object.keys(this.types).length == 1) 
+  //       return typechart[this.types[0]]
+  //     else if (Object.keys(this.types).length == 0) 
+  //       return typechart["stellar"]
+  //     else
+  //       return multiplyIntersect(typechart[this.types[0]], typechart[this.types[1]])
+
+  // }
+
+  // get defensiveTotal() {
+  //     if (Object.keys(this.abilityDefenses).length == 0)  
+  //       return this.defensiveTypes
+  //     else
+  //       return multiplyIntersect(this.defensiveTypes, this.abilityDefenses)
+
+  // }
+
+    toJSON() {
+      const json: any = { ...this }; // all normal fields
+
+      // get all getter names from the prototype
+      const proto = Object.getPrototypeOf(this);
+      const props = Object.getOwnPropertyDescriptors(proto);
+
+      for (const [key, descriptor] of Object.entries(props)) {
+        if (typeof descriptor.get === "function") {
+          // call the getter and add the value
+          json[key] = (this as any)[key];
+        }
+      }
+
+      return json;
+  }
+
+  toggleTera () {
+    this.isTeraCaptain = !this.isTeraCaptain
+
+  }
+
+  addAbility(s: string, n: number) {
+    this.abilityDefenses[s] = n;
+
+  }
+
+  removeAbility(s: string) {
+    delete this.abilityDefenses[s];
+
   }
 }

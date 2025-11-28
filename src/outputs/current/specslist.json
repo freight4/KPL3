@@ -1,0 +1,121 @@
+[
+  {
+    "name": "Ninetales",
+    "num": 38,
+    "tier": "ZU",
+    "forme": "",
+    "types": [
+      "Fire"
+    ],
+    "baseStats": {
+      "hp": 73,
+      "atk": 76,
+      "def": 75,
+      "spa": 81,
+      "spd": 100,
+      "spe": 100
+    },
+    "abilities": {
+      "0": "Flash Fire",
+      "H": "Drought"
+    },
+    "isTeraCaptain": true,
+    "abilityDefenses": {},
+    "tierCost": 2,
+    "teraCost": 0.5,
+    "totalCost": 2.5,
+    "baseStatTotal": 505,
+    "effectiveBaseStatTotal": 429,
+    "spritePath": "assets/sprite_folder/sprites/38.png"
+  },
+  {
+    "name": "Ninetales-Alola",
+    "num": 38,
+    "tier": "NU",
+    "forme": "Alola",
+    "types": [
+      "Ice",
+      "Fairy"
+    ],
+    "baseStats": {
+      "hp": 73,
+      "atk": 67,
+      "def": 75,
+      "spa": 81,
+      "spd": 100,
+      "spe": 109
+    },
+    "abilities": {
+      "0": "Snow Cloak",
+      "H": "Snow Warning"
+    },
+    "isTeraCaptain": true,
+    "abilityDefenses": {},
+    "tierCost": 4,
+    "teraCost": 1,
+    "totalCost": 5,
+    "baseStatTotal": 505,
+    "effectiveBaseStatTotal": 438,
+    "spritePath": "assets/sprite_folder/sprites/38_Alola.png"
+  },
+  {
+    "name": "Bisharp",
+    "num": 625,
+    "tier": "RU",
+    "forme": "",
+    "types": [
+      "Dark",
+      "Steel"
+    ],
+    "baseStats": {
+      "hp": 65,
+      "atk": 125,
+      "def": 100,
+      "spa": 60,
+      "spd": 70,
+      "spe": 70
+    },
+    "abilities": {
+      "0": "Defiant",
+      "1": "Inner Focus",
+      "H": "Pressure"
+    },
+    "isTeraCaptain": true,
+    "abilityDefenses": {},
+    "tierCost": 6,
+    "teraCost": 1,
+    "totalCost": 7,
+    "baseStatTotal": 490,
+    "effectiveBaseStatTotal": 430,
+    "spritePath": "assets/sprite_folder/sprites/625.png"
+  },
+  {
+    "name": "Rillaboom",
+    "num": 812,
+    "tier": "OU",
+    "forme": "",
+    "types": [
+      "Grass"
+    ],
+    "baseStats": {
+      "hp": 100,
+      "atk": 125,
+      "def": 90,
+      "spa": 60,
+      "spd": 70,
+      "spe": 85
+    },
+    "abilities": {
+      "0": "Overgrow",
+      "H": "Grassy Surge"
+    },
+    "isTeraCaptain": true,
+    "abilityDefenses": {},
+    "tierCost": 10,
+    "teraCost": 2,
+    "totalCost": 12,
+    "baseStatTotal": 530,
+    "effectiveBaseStatTotal": 470,
+    "spritePath": "assets/sprite_folder/sprites/812.png"
+  }
+]

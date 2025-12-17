@@ -45,9 +45,10 @@ export class Pokedex {
         if (filter.bst) pass = pass && compareNumber(pokemon.baseStatTotal ?? 0, filter.bst.comparison, filter.bst.value);
         if (filter.ebst) pass = pass && compareNumber(pokemon.effectiveBaseStatTotal ?? 0, filter.ebst.comparison, filter.ebst.value);
         if (filter.hasAltForme !== undefined) {
-            const hasForme = pokemon.forme !== ""; 
-            pass = pass && (filter.hasAltForme ? hasForme : !hasForme);
-            }
+          // true if either 'forme' or 'formeOrder' is non-empty
+          const hasAltForme = (pokemon.forme !== "") || (pokemon.formeOrder && Object.keys(pokemon.formeOrder).length > 0);
+          pass = pass && (filter.hasAltForme ? hasAltForme : !hasAltForme);
+        }
         return pass;
         }
     } catch (e) {

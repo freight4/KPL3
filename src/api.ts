@@ -5,33 +5,64 @@ import { Pokemon } from "./classes/Pokemon";
 import { Pokedex } from './classes/Pokedex';
 
 
-async function fetchPokemonData(name: string) {
-  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`);
-  if (!response.ok) throw new Error(`Failed to fetch ${name}`);
-  return response.json();
-}
+// async function fetchPokemonData(name: string) {
+//   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`);
+//   if (!response.ok) throw new Error(`Failed to fetch ${name}`);
+//   return response.json();
+// }
 
-async function fetchAllPokemonData(names: string[]) {
-  const promises = names.map(name => fetchPokemonData(name));
-  const results = await Promise.all(promises); // waits for all requests to finish
-  return results;
-}
+// async function fetchAllPokemonData(names: string[]) {
+//   const promises = names.map(name => fetchPokemonData(name));
+//   const results = await Promise.all(promises); // waits for all requests to finish
+//   return results;
+// }
 
+
+// async function enrichPokemonLearnsets(pokemonList: Pokemon[]) {
+//   // Get the list of names
+//   const names = pokemonList.map(p => p.name);
+
+//   const apiData = await fetchAllPokemonData(names);
+//   const moves = apiData[0].moves.map((m: any) => m.move.name);
+
+
+//   // Loop through both lists
+//   apiData.forEach((data, index) => {
+//     const moves = data.moves.map((m: any) => m.move.name); // extract just the move names
+//     pokemonList[index].applyLearnset(moves); // apply to the Pokémon object
+//   });
+// }
 
 async function enrichPokemonLearnsets(pokemonList: Pokemon[]) {
-  // Get the list of names
   const names = pokemonList.map(p => p.name);
 
-  const apiData = await fetchAllPokemonData(names);
-  const moves = apiData[0].moves.map((m: any) => m.move.name);
+  // Wrap each fetch in a try/catch so one failure doesn't stop everything
+  const results = await Promise.all(
+    names.map(async (name, index) => {
+      try {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name.toLowerCase()}`);
+        if (!response.ok) throw new Error(`Failed to fetch ${name}`);
+        const data = await response.json();
 
+        // Extract moves and apply to the Pokémon object
+        const moves = data.moves.map((m: any) => m.move.name);
+        pokemonList[index].applyLearnset(moves);
 
-  // Loop through both lists
-  apiData.forEach((data, index) => {
-    const moves = data.moves.map((m: any) => m.move.name); // extract just the move names
-    pokemonList[index].applyLearnset(moves); // apply to the Pokémon object
-  });
+        return { success: true, name };
+      } catch (err) {
+        console.warn(`Failed to fetch learnset for ${name}:`, err);
+        // optionally mark the Pokémon as failed
+        (pokemonList[index] as any).learnsetFailed = true;
+        return { success: false, name };
+      }
+    })
+  );
+
+  // Optional: log summary
+  const failed = results.filter(r => !r.success).map(r => r.name);
+  if (failed.length) console.log("Learnset fetch failed for:", failed.join(", "));
 }
+
 
 
 const tiers = ['OU', 'UUBL', 'UU', 'RUBL', 'RU', 'NUBL', 'NU', 'PUBL', 'PU', 'ZUBL', 'ZU', 'NFE', 'LC']
@@ -47,11 +78,12 @@ const raw_specs = Dex.species.all().filter((obj: any) =>
   tiers.includes(obj.tier ?? "") &&
   !banned.includes(obj.name)
 );
+
 // const testmons = ["Bisharp", "Rillaboom", "Ninetales", "Ninetales-Alola", "Clodsire"]
 // const emptystring = ""
 // const raw_specs = Dex.species.all().filter((obj: any) =>
 //   testmons.includes(obj.name) 
-  // &&  !emptystring.includes(obj.forme)
+//   // &&  !emptystring.includes(obj.forme)
 // );
 
 const rawput = JSON.stringify(raw_specs, null, 2);

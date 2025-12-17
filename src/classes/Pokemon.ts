@@ -40,6 +40,7 @@ export class Pokemon {
   num: number;
   tier: string;
   forme: string;
+  formeOrder: string[];
   types: string[];
   abilities: string[];
   learnset: string[];
@@ -59,7 +60,7 @@ export class Pokemon {
     this.num = Number(species.num);
     this.tier = species.tier;
     this.forme = species.forme;
-    // this.types = Array.isArray(species.types) ? species.types.slice():  [];
+    this.formeOrder = species.formeOrder ?? [];
     this.types = Array.isArray(species.types)
       ? species.types
           .filter((t: unknown): t is string => typeof t === "string") // type guard

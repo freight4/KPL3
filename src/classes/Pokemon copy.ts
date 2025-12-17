@@ -16,7 +16,7 @@ function multiplyIntersect(a: Record<string, number> = {}, b: Record<string, num
 
 type TypeChart = Record<string, Record<string, number>>;
 const typechart = TC as TypeChart
-// console.log("typechart keys:", Object.keys(typechart).slice(0, 20));
+console.log("typechart keys:", Object.keys(typechart).slice(0, 20));
 
 const TIER_POINTS: Record<string, number> = {
   "OU": 10, 
@@ -41,12 +41,10 @@ export class Pokemon {
   tier: string;
   forme: string;
   types: string[];
-  abilities: string[];
-  learnset: string[];
   baseStats: Record<string, number>;
+  abilities: Record<string, string>;
   isTeraCaptain: boolean;
   abilityDefenses: Record<string, number>;
-
 
   constructor(species: any) {
     // this.name = species.name;
@@ -65,8 +63,6 @@ export class Pokemon {
           .filter((t: unknown): t is string => typeof t === "string") // type guard
           .map((t: string) => t.toLowerCase())
       : [];
-    this.abilities = Object.values(species.abilities) ?? {};
-    this.learnset = [];
     this.baseStats = {
       hp : species.baseStats?.hp ?? 0,
       atk : species.baseStats?.atk ?? 0,
@@ -75,6 +71,7 @@ export class Pokemon {
       spd : species.baseStats?.spd ?? 0,
       spe : species.baseStats?.spe ?? 0,
     }
+    this.abilities = species.abilities ?? {};
     
     this.isTeraCaptain = true;
     this.abilityDefenses = {};
@@ -113,7 +110,6 @@ export class Pokemon {
       return `assets/sprite_folder/sprites/${this.num}.png`;
     else
       return `assets/sprite_folder/sprites/${this.num}_${this.forme}.png`;
-      //need to go through and name all of the alternate form mons
   }
 
   get defensiveTypes() {
@@ -125,6 +121,7 @@ export class Pokemon {
     }
 
     if (this.types.length === 1) {
+      console.log("monotype");
       return typechart[this.types[0]];
     }
 
@@ -172,19 +169,4 @@ export class Pokemon {
     delete this.abilityDefenses[s];
 
   }
-
-  applyLearnset(movelist: string[]) {
-    this.learnset = movelist;
-
-  }
 }
-
-
-
-//poketeam class needs:
-// team
-//     size limit
-//     list(pokemon, (1<=len<=limit))
-//     list(tera_captains (1<=len))
-//     sum(price)
-//     team_breakdown (defensive_types, base_stats)

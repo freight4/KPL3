@@ -1,9 +1,9 @@
 import { DraftPokemon } from '../Team/draft-pokemon.model';
 // Static import version (for build-time JSON)
 import pokemonJson from './Pokemon.json';
-
+import { fullPokedex } from '../../../../../src/api';
 export function getPokemonPool(): DraftPokemon[] {
-  return (pokemonJson as any[]).map(p => ({
+  return fullPokedex.pokemons.map(p => ({
     name: p.name,
     tier: p.tier,
     cost: getDefaultCost(p.tier),

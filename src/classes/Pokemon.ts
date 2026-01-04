@@ -110,14 +110,14 @@ export class Pokemon {
     return bst - Math.min(atk, spa);
   }
 
-  get spritePath(): string {
-    // Angular serves /assets/... relative to index.html
-    if ("".includes(this.forme))
-      return `assets/sprite_folder/sprites/${this.num}.png`;
-    else
-      return `assets/sprite_folder/sprites/${this.num}_${this.forme}.png`;
-      //need to go through and name all of the alternate form mons
+get spritePath(): string {
+  // Angular serves /assets/... relative to index.html
+  if (!this.forme || this.forme.trim() === "") {
+    return `assets/sprite_folder/sprites/${this.num}.png`;
   }
+
+  return `assets/sprite_folder/sprites/${this.num}_${this.forme}.png`;
+}
 
   // get defensiveTypes() {
   //     if (Object.keys(this.types).length == 1) 

@@ -1,3 +1,88 @@
+<h2 style="text-align:center; margin:20px 0;">Current Draft Pick</h2>
+
+<div
+  *ngIf="snakeDraftOrder.length"
+  style="
+    width:80%;
+    margin:auto;
+    border:1px solid #ccc;
+    border-radius:8px;
+    padding:20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+  "
+>
+
+  <!-- Previous -->
+  <button
+    (click)="goToPreviousPick()"
+    [disabled]="!previousTeam"
+    style="
+      cursor:pointer;
+      font-size:24px;
+      background:none;
+      border:none;
+    "
+  >
+    ⬅
+  </button>
+
+  <!-- Previous Team -->
+  <div style="width:25%; text-align:center; opacity:0.6;">
+    <div style="font-size:14px;">Previous</div>
+    <div style="font-weight:bold;">
+      {{ previousTeam?.name || '-' }}
+    </div>
+  </div>
+
+  <!-- Current Team -->
+  <div
+    style="
+      width:30%;
+      text-align:center;
+      border:2px solid #1976d2;
+      border-radius:8px;
+      padding:12px;
+      background:#e3f2fd;
+      font-weight:bold;
+    "
+  >
+    <div style="font-size:14px;">Now Picking</div>
+    <div style="font-size:18px;">
+      {{ currentTeam?.name }}
+    </div>
+    <div style="margin-top:6px; font-size:12px;">
+      Pick #{{ currentPickIndex + 1 }}
+    </div>
+  </div>
+
+  <!-- Next Team -->
+  <div style="width:25%; text-align:center; opacity:0.6;">
+    <div style="font-size:14px;">Next</div>
+    <div style="font-weight:bold;">
+      {{ nextTeam?.name || '-' }}
+    </div>
+  </div>
+
+  <!-- Next -->
+  <button
+    (click)="goToNextPick()"
+    [disabled]="!nextTeam"
+    style="
+      cursor:pointer;
+      font-size:24px;
+      background:none;
+      border:none;
+    "
+  >
+    ➡
+  </button>
+
+</div>
+
+
 <h2 style="text-align:center; margin:20px 0;">
   Draft Results
 </h2>

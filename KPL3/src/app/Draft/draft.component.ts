@@ -190,16 +190,17 @@ draftPokemonByName(p: DraftPokemon, teamName: string) {
   snakeDraftOrder: Team[] = [];
   draftRounds: number = 8;
 
-  generateSnakeDraft() {
-    const shuffled = [...this.teams].sort(() => Math.random() - 0.5);
-    const order: Team[] = [];
+generateSnakeDraft() {
+  const shuffled = [...this.teams].sort(() => Math.random() - 0.5);
+  const order: Team[] = [];
 
-    for (let round = 0; round < this.draftRounds; round++) {
-      order.push(...(round % 2 === 0 ? shuffled : [...shuffled].reverse()));
-    }
-
-    this.snakeDraftOrder = order;
+  for (let round = 0; round < this.draftRounds; round++) {
+    order.push(...(round % 2 === 0 ? shuffled : [...shuffled].reverse()));
   }
+
+  this.snakeDraftOrder = order;
+  this.currentPickIndex = 0; // reset to first pick
+}
 
 searchTerm: string = '';
 
@@ -224,7 +225,37 @@ getFilteredPokemonByTier(tier: string): DraftPokemon[] {
   return this.getPokemonByTier(tier)
              .filter(p => !term || p.name.toLowerCase().includes(term));
 }
+currentPickIndex = 0;
 
+get previousTeam(): Team | null {
+  if (!this.snakeDraftOrder.length) return null;
+  return this.currentPickIndex > 0
+    ? this.snakeDraftOrder[this.currentPickIndex - 1]
+    : null;
+}
+
+get currentTeam(): Team | null {
+  if (!this.snakeDraftOrder.length) return null;
+  return this.snakeDraftOrder[this.currentPickIndex];
+}
+
+get nextTeam(): Team | null {
+  if (!this.snakeDraftOrder.length) return null;
+  return this.currentPickIndex < this.snakeDraftOrder.length - 1
+    ? this.snakeDraftOrder[this.currentPickIndex + 1]
+    : null;
+}
+goToPreviousPick() {
+  if (this.currentPickIndex > 0) {
+    this.currentPickIndex--;
+  }
+}
+
+goToNextPick() {
+  if (this.currentPickIndex < this.snakeDraftOrder.length - 1) {
+    this.currentPickIndex++;
+  }
+}
 
 
 }

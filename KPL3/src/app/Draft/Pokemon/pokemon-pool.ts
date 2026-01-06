@@ -3,10 +3,14 @@ import { DraftPokemon } from '../Team/draft-pokemon.model';
 import pokemonJson from './Pokemon.json';
 export function getPokemonPool(): DraftPokemon[] {
   return (pokemonJson as any[]).map(p => ({
+    num: p.num,
     name: p.name,
     tier: p.tier,
     cost: getDefaultCost(p.tier),
-    isTeraCaptain: false
+    isTeraCaptain: false,
+    sprite: !p.forme || p.forme.trim() === ""
+      ? `/sprites/${p.num}.png`
+      : `/sprites/${p.num}_${p.forme}.png`
   }));
 }
 
@@ -28,3 +32,5 @@ function getDefaultCost(tier: string): number {
     default: return 100;
   }
 }
+
+

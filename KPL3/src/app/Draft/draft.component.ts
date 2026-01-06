@@ -89,46 +89,19 @@ getTeraCaptainCount(team: Team): number {
 }
   
 toggleTeraCaptain(team: Team, pokemon: DraftPokemon) {
-  // Helper: define extra cost by tier
-  const tierCostMap: { [tier: string]: number } = {
-    'OU': 2,
-    'UUBL': 2,
-    'UU': 1,
-    'RUBL': 1,
-    'NUBL': 1,
-    'NU': 1,
-    'PUBL': 1,
-    'PU': 1,
-    'ZUBL': 0.5,
-    'ZU': 0.5,
-    'NFE': 0.5,
-    'LC': 0.5
-  };
+  pokemon.isTeraCaptain = !pokemon.isTeraCaptain; // toggle individually
 
-  const extraCost = tierCostMap[pokemon.tier] ?? 1; // default 1 if tier missing
-
-  if (pokemon.isTeraCaptain) {
-    // Turn off Tera Captain: subtract tier-specific cost
-    pokemon.isTeraCaptain = false;
-    if (pokemon.cost !== undefined) {
-      pokemon.cost -= extraCost;
-    }
-  } else {
-    // Only allow ONE Tera Captain per team
-    team.pokemon.forEach(p => {
-      if (p.isTeraCaptain) {
-        const oldExtra = tierCostMap[p.tier] ?? 1;
-        p.isTeraCaptain = false;
-        if (p.cost !== undefined) {
-          p.cost -= oldExtra; // remove extra cost from previous Tera Captain
-        }
-      }
-    });
-
-    // Set the selected Pokémon as Tera Captain
-    pokemon.isTeraCaptain = true;
-    if (pokemon.cost !== undefined) {
-      pokemon.cost += extraCost; // add tier-specific extra cost
+  if (pokemon.cost !== undefined) {
+    // Adjust cost based on toggle and tier
+    if (pokemon.isTeraCaptain) {
+      if (pokemon.tier === 'OU' || pokemon.tier === 'UUBL') pokemon.cost += 2;
+      else if (['UU','RUBL','NUBL','NU','PUBL','PU'].includes(pokemon.tier)) pokemon.cost += 1;
+      else if (['ZUBL','ZU','NFE','LC'].includes(pokemon.tier)) pokemon.cost += 0.5;
+    } else {
+      // subtract the same amount when untoggled
+      if (pokemon.tier === 'OU' || pokemon.tier === 'UUBL') pokemon.cost -= 2;
+      else if (['UU','RUBL','NUBL','NU','PUBL','PU'].includes(pokemon.tier)) pokemon.cost -= 1;
+      else if (['ZUBL','ZU','NFE','LC'].includes(pokemon.tier)) pokemon.cost -= 0.5;
     }
   }
 }

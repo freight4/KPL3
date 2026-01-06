@@ -140,14 +140,18 @@
             <td style="padding:6px;">{{ p.name }}</td>
             <td style="text-align:center; padding:6px;">{{ p.tier }}</td>
             <td style="text-align:center; padding:6px;">{{ p.cost }}</td>
-            <td style="text-align:center; padding:6px;">
-              <input
-                type="radio"
-                name="tera-{{ team.name }}"
-                [checked]="p.isTeraCaptain"
-                (click)="toggleTeraCaptain(team, p)"
-              />
-            </td>
+<td
+  style="text-align:center; padding:6px; cursor:pointer;"
+  (click)="toggleTeraCaptain(team, p)"
+>
+  <img
+    *ngIf="p.isTeraCaptain"
+    src = "../../../../src/assets/sprite_folder/TeraStellar.png"
+    alt="Tera Captain"
+    width="26"
+    height="26"
+  />
+</td>
             <td style="text-align:center; padding:6px;">
               <button 
                 style="padding:4px 8px; background:#e74c3c; color:white; border:none; border-radius:4px; cursor:pointer;"

@@ -1,4 +1,4 @@
-<h2 style="text-align:center; margin:20px 0;">Current Draft Pick</h2>
+<h2 style="text-align:center; margin:20px 0;  color: #ffffff">Current Draft Pick</h2>
 
 <div
   *ngIf="snakeDraftOrder.length"
@@ -31,8 +31,8 @@
 
   <!-- Previous Team -->
   <div style="width:25%; text-align:center; opacity:0.6;">
-    <div style="font-size:14px;">Previous</div>
-    <div style="font-weight:bold;">
+    <div style="font-size:14px;color:#ffffff;">Previous</div>
+    <div style="font-weight:bold;color:#ffffff;">
       {{ previousTeam?.name || '-' }}
     </div>
   </div>
@@ -47,21 +47,22 @@
       padding:12px;
       background:#e3f2fd;
       font-weight:bold;
+      
     "
   >
-    <div style="font-size:14px;">Now Picking</div>
-    <div style="font-size:18px;">
+    <div style="font-size:14px;color:#000000;">Now Picking</div>
+    <div style="font-size:18px;color:#000000;">
       {{ currentTeam?.name }}
     </div>
-    <div style="margin-top:6px; font-size:12px;">
+    <div style="margin-top:6px; font-size:12px;color:#000000;">
       Pick #{{ currentPickIndex + 1 }}
     </div>
   </div>
 
   <!-- Next Team -->
   <div style="width:25%; text-align:center; opacity:0.6;">
-    <div style="font-size:14px;">Next</div>
-    <div style="font-weight:bold;">
+    <div style="font-size:14px;color:#ffffff;">Next</div>
+    <div style="font-weight:bold;color:#ffffff;">
       {{ nextTeam?.name || '-' }}
     </div>
   </div>
@@ -83,9 +84,9 @@
 </div>
 
 
-<h2 style="text-align:center; margin:20px 0;">Draft Results</h2> <div style=" width:90%; margin:auto; display:flex; flex-wrap:wrap; gap:16px; justify-content:center; " > <div *ngFor="let team of teams" (click)="team.expanded = !team.expanded" style=" width:250px; border:1px solid #ccc; border-radius:8px; overflow:hidden; cursor:pointer; transition:all 0.3s; box-shadow: 0 2px 6px rgba(0,0,0,0.1); " > <!-- Team Header --> <div style="background:#f5f5f5; padding:12px; font-weight:bold; text-align:center;"> {{ team.name }} <div style="font-size:12px; margin-top:4px;"> Pokémon Drafted: {{ team.pokemon.length }} | Total Cost: {{ getTotalCost(team) }} | Tera Captains: {{ getTeraCaptainCount(team) }} </div> </div> <!-- Pokémon Sprites Row --> <div style="display:flex; flex-wrap:wrap; gap:4px; padding:8px; justify-content:center;"> <ng-container *ngFor="let p of team.pokemon"> <div style="position:relative; text-align:center; width:48px; cursor:pointer;" (click)="toggleTeraCaptain(team, p); $event.stopPropagation()"> <img [src]="p.sprite" [alt]="p.name" width="48" height="48" style="border-radius:4px;" /> <!-- Tera Captain Badge --> <img *ngIf="p.isTeraCaptain" src="/TeraStellar.png" alt="Tera Captain" width="16" height="16" style="position:absolute; top:0; right:0; border-radius:50%; background:white;"/> </div> </ng-container> </div> <!-- Expanded Details --> <div *ngIf="team.expanded" style="padding:8px; border-top:1px solid #ccc; background:#fafafa;"> <div *ngFor="let p of team.pokemon" style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;"> <div style="display:flex; align-items:center; gap:6px;"> <img [src]="p.sprite" [alt]="p.name" width="36" height="36" style="border-radius:4px;" /> <span>{{ p.name }}</span> </div> <div style="display:flex; align-items:center; gap:4px;"> <span style="font-size:12px;">{{ p.tier }} | {{ p.cost }}</span> <img *ngIf="p.isTeraCaptain" src="/TeraStellar.png" width="24" height="24" alt="Tera Captain" /> <button (click)="removePokemon(team, p); $event.stopPropagation()" style="padding:2px 6px; background:#e74c3c; color:white; border:none; border-radius:4px; cursor:pointer; font-size:12px;" > Remove </button> </div> </div> </div> </div> </div>
+<h2 style="text-align:center; margin:20px 0; color: #ffffff">Draft Results</h2> <div style=" width:90%; margin:auto; display:flex; flex-wrap:wrap; gap:16px; justify-content:center; " > <div *ngFor="let team of teams" (click)="team.expanded = !team.expanded" style=" width:250px; border:1px solid #ccc; background-color: #4864b3; border-radius:8px; overflow:hidden; cursor:pointer; transition:all 0.3s; box-shadow: 0 2px 6px rgba(0,0,0,0.1); " > <!-- Team Header --> <div style="background:#f5f5f5; padding:12px; font-weight:bold; text-align:center;"> {{ team.name }} <div style="font-size:12px; margin-top:4px;"> Pokémon Drafted: {{ team.pokemon.length }} | Total Cost: {{ getTotalCost(team) }} | Tera Captains: {{ getTeraCaptainCount(team) }} </div> </div> <!-- Pokémon Sprites Row --> <div style="display:flex; flex-wrap:wrap; gap:4px; padding:8px; justify-content:center;"> <ng-container *ngFor="let p of team.pokemon"> <div style="position:relative; text-align:center; width:48px; cursor:pointer;" (click)="toggleTeraCaptain(team, p); $event.stopPropagation()"> <img [src]="p.sprite" [alt]="p.name" width="48" height="48" style="border-radius:4px;" /> <!-- Tera Captain Badge --> <img *ngIf="p.isTeraCaptain" src="/TeraStellar.png" alt="Tera Captain" width="16" height="16" style="position:absolute; top:0; right:0; border-radius:50%; background:white;"/> </div> </ng-container> </div> <!-- Expanded Details --> <div *ngIf="team.expanded" style="padding:8px; border-top:1px solid #ccc; background:#fafafa;"> <div *ngFor="let p of team.pokemon" style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;"> <div style="display:flex; align-items:center; gap:6px;"> <img [src]="p.sprite" [alt]="p.name" width="36" height="36" style="border-radius:4px;" /> <span>{{ p.name }}</span> </div> <div style="display:flex; align-items:center; gap:4px;"> <span style="font-size:12px;">{{ p.tier }} | {{ p.cost }}</span> <img *ngIf="p.isTeraCaptain" src="/TeraStellar.png" width="24" height="24" alt="Tera Captain" /> <button (click)="removePokemon(team, p); $event.stopPropagation()" style="padding:2px 6px; background:#e74c3c; color:white; border:none; border-radius:4px; cursor:pointer; font-size:12px;" > Remove </button> </div> </div> </div> </div> </div>
 <!-- Draft Pokémon Container -->
-<h2 style="text-align:center; margin:20px 0;">Draft Pokémon</h2>
+<h2 style="text-align:center; margin:20px 0; color: #ffffff">Draft Pokémon</h2>
 
 <div 
   style="
@@ -96,6 +97,7 @@
     border-radius:6px;
     overflow-y:auto;
     padding:10px;
+    background-color: #4864b3;
   "
 >
   <!-- Search Box -->
@@ -145,11 +147,11 @@
           <tr *ngFor="let p of getFilteredPokemonByTier(tier)"
               [style.opacity]="isDrafted(p) ? 0.5 : 1"
               style="border-bottom:1px solid #ccc;">
-            <td style="padding:6px; text-align:center; display:flex; align-items:center; justify-content:flex-start; gap:8px;">
+            <td style="color: #ffffff;padding:6px; text-align:center; display:flex; align-items:center; justify-content:flex-start; gap:8px;">
   <img [src]="p.sprite" alt="{{p.name}}" width="48" height="48" style="vertical-align:middle; border-radius:4px;"/>
   <span>{{ p.name }}</span>
 </td>
-            <td style="text-align:center; padding:6px;">{{ p.cost }}</td>
+            <td style="color: #ffffff;text-align:center; padding:6px;">{{ p.cost }}</td>
             <td style="text-align:center; padding:6px;">
               <select #selectedTeam style="padding:4px; margin-right:4px;" [disabled]="isDrafted(p)">
                 <option *ngFor="let team of teams" [value]="team.name">{{ team.name }}</option>
@@ -171,7 +173,7 @@
 
 
 <!-- Snake Draft Container -->
-<h2 style="text-align:center; margin:20px 0;padding:10px;">Snake Draft Order</h2>
+<h2 style="text-align:center; margin:20px 0;padding:10px; color: #ffffff">Snake Draft Order</h2>
 
 <div 
   style="
@@ -182,6 +184,7 @@
     border-radius:6px;
     overflow-y:auto;
     padding:10px;
+    background-color: #4864b3;
   "
 >
   <div style="text-align:center; margin-bottom:10px;">
@@ -193,15 +196,15 @@
   <table *ngIf="snakeDraftOrder.length" style="width:100%; border-collapse: collapse; table-layout: fixed;">
     <thead>
       <tr style="background:#e0e0e0;">
-        <th style="padding:6px;">Pick #</th>
+        <th style="padding:6px; ">Pick #</th>
         <th style="padding:6px;">Team</th>
       </tr>
     </thead>
 
     <tbody>
       <tr *ngFor="let team of snakeDraftOrder; let i = index" style="border-bottom:1px solid #ccc;">
-        <td style="text-align:center; padding:6px;">{{ i + 1 }}</td>
-        <td style="padding:6px;text-align:center;">{{ team.name }}</td>
+        <td style="text-align:center; padding:6px;color: #ffffff;">{{ i + 1 }}</td>
+        <td style="padding:6px;text-align:center; color: #ffffff;">{{ team.name }}</td>
       </tr>
     </tbody>
   </table>

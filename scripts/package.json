@@ -1,0 +1,17 @@
+{
+  "name": "kpl3-scripts",
+  "version": "1.0.0",
+  "description": "Data generation scripts for KPL3",
+  "scripts": {
+    "generate": "ts-node -r tsconfig-paths/register -P tsconfig.json generate-pokemon.ts"
+  },
+  "dependencies": {
+    "@types/node": "^20.0.0",
+    "pokemon-showdown": "^0.11.10"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.9.3"
+  }
+}

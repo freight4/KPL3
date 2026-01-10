@@ -25,8 +25,7 @@ export class DraftComponent implements OnInit {
     { name: 'Eileen C', pokemon: [], expanded: false },
     { name: 'Jonas B', pokemon: [], expanded: false },
     { name: 'EliteFourInch', pokemon: [], expanded: false },
-    { name: 'Jack R', pokemon: [], expanded: false },
-    { name: 'Alec L', pokemon: [], expanded: false }
+    { name: 'Jack R', pokemon: [], expanded: false }
   ];
   
   tierOrder: string[] = [
@@ -228,4 +227,19 @@ export class DraftComponent implements OnInit {
       this.currentPickIndex++;
     }
   }
+
+  get teamsInDraftOrder() {
+  if (!this.snakeDraftOrder?.length) {
+    return this.teams;
+  }
+
+  const orderMap = new Map(
+    this.snakeDraftOrder.map((team, index) => [team.name, index])
+  );
+
+  return [...this.teams].sort((a, b) => {
+    return (orderMap.get(a.name) ?? Infinity) -
+           (orderMap.get(b.name) ?? Infinity);
+  });
+}
 }

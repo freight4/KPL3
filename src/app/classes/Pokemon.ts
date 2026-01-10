@@ -79,7 +79,7 @@ export class Pokemon {
     }
     this.abilities = species.abilities ?? {};
 
-    this.isTeraCaptain = true;
+    this.isTeraCaptain = false;
     this.abilityDefenses = {};
   }
 

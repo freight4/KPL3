@@ -1,0 +1,56 @@
+<h2 style="text-align:center; margin:20px 0; color: #ffffff">
+  Team Schedule
+</h2>
+
+<!-- Generate Schedule Button -->
+<div style="text-align:center; margin-bottom:16px;">
+  <button
+    (click)="generateSchedule()"
+    style="
+      padding:8px 16px;
+      font-weight:bold;
+      border-radius:6px;
+      border:none;
+      cursor:pointer;
+      background-color:#4864b3;
+      color:white;
+      transition: all 0.2s ease-in-out;
+    "
+    onmouseover="this.style.backgroundColor='#2a4a8b'"
+    onmouseout="this.style.backgroundColor='#4864b3'"
+  >
+    Generate Schedule
+  </button>
+</div>
+
+<!-- Schedule Table Container -->
+<div
+  style="
+    width:90%;
+    margin:auto;
+    background-color: rgba(72, 100, 179, 0.8);
+    padding:16px;
+    border-radius:8px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  "
+>
+  <table style="width:100%; border-collapse: collapse;">
+    <thead>
+      <tr style="background: #e0e0e0;">
+        <th style="padding:8px; border:1px solid #000000;">Match #</th>
+        <th style="padding:8px; border:1px solid #000000;">Team 1</th>
+        <th style="padding:8px; border:1px solid #000000;">Team 2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let match of schedule; let i = index"
+        style="border-bottom:1px solid #000000; background-color: rgba(224,224,224,0.5);"
+      >
+        <td style="text-align:center; padding:6px; color:#000000;">{{ i + 1 }}</td>
+        <td style="text-align:center; padding:6px; color:#000000;">{{ match[0].name }}</td>
+        <td style="text-align:center; padding:6px; color:#000000;">{{ match[1].name }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

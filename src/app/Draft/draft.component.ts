@@ -18,11 +18,11 @@ export class DraftComponent implements OnInit {
   teams: Team[] = [
     { name: 'Santa Barbara Snom', pokemon: [], expanded: false },
     { name: 'Minnesota Golden Bidoof', pokemon: [], expanded: false },
-    { name: 'Alex D', pokemon: [], expanded: false },
-    { name: 'Jake L', pokemon: [], expanded: false },
+    { name: 'Dragonairs Dad', pokemon: [], expanded: false },
+    { name: 'The Biggest Snepcineroar Fan', pokemon: [], expanded: false },
     { name: 'The Scovillain Scourgers', pokemon: [], expanded: false },
     { name: 'The Tampa Bay Lanturns', pokemon: [], expanded: false },
-    { name: 'Eileen C', pokemon: [], expanded: false },
+    { name: 'The Orlando Oshawotts', pokemon: [], expanded: false },
     { name: 'Jonas B', pokemon: [], expanded: false },
     { name: 'EliteFourInch', pokemon: [], expanded: false },
     { name: 'Jack R', pokemon: [], expanded: false }

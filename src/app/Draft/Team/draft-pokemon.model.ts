@@ -3,5 +3,6 @@ export interface DraftPokemon {
   tier: string;
   cost?: number;
   isTeraCaptain: boolean;
-  sprite?: string
+  sprite?: string;
+  types?: string[];
 }

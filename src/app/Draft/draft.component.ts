@@ -175,24 +175,31 @@ export class DraftComponent implements OnInit {
   searchTerm: string = '';
 
   onSearchChange() {
-    const term = this.searchTerm.toLowerCase().trim();
+  const term = this.searchTerm.toLowerCase().trim();
 
-    if (!term) {
-      this.getTiers().forEach(tier => this.tierExpanded[tier] = false);
-      return;
-    }
+  this.getTiers().forEach(tier => {
+    this.tierExpanded[tier] = !term
+      ? false
+      : this.getPokemonByTier(tier).some(p =>
+          p.name.toLowerCase().includes(term) ||
+          p.types.some(type => type.toLowerCase().includes(term))
+        );
+  });
+}
 
-    this.getTiers().forEach(tier => {
-      const matches = this.getPokemonByTier(tier)
-        .some(p => p.name.toLowerCase().includes(term));
-      this.tierExpanded[tier] = matches;
-    });
+
+  getFilteredPokemonByTier(tier: string) {
+  const pokemon = this.getPokemonByTier(tier);
+  const term = this.searchTerm.toLowerCase().trim();
+
+  if (!term) {
+    return pokemon; // 🔑 SHOW ALL when no search
   }
 
-  getFilteredPokemonByTier(tier: string): Pokemon[] {
-    const term = this.searchTerm.toLowerCase().trim();
-    return this.getPokemonByTier(tier)
-               .filter(p => !term || p.name.toLowerCase().includes(term));
+  return pokemon.filter(p =>
+    p.name.toLowerCase().includes(term) ||
+    p.types.some(type => type.toLowerCase().includes(term))
+  );
   }
 
   currentPickIndex = 0;
@@ -237,7 +244,7 @@ export class DraftComponent implements OnInit {
     this.snakeDraftOrder.map((team, index) => [team.name, index])
   );
 
-  return [...this.teams].sort((a, b) => {
+  return [...this.teams].sort((b,a) => {
     return (orderMap.get(a.name) ?? Infinity) -
            (orderMap.get(b.name) ?? Infinity);
   });

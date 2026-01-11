@@ -172,6 +172,91 @@ export class DraftComponent implements OnInit {
     this.currentPickIndex = 0;
   }
 
+  exportDraftResults() {
+    // Get all drafted pokemon from the pool
+    const drafted = this.flattenDrafted(this.teams);
+    const undrafted = this.flattenUndrafted(this.pokemonPool.filter(p => !this.isDrafted(p)));
+
+    const csv_d = this.convertToCSV(drafted);
+    const csv_ud = this.convertToCSV(undrafted);
+
+    const csv_res = csv_d + csv_ud
+
+    this.downloadCSV(csv_res, 'draftedResults.csv');
+  }
+
+  convertToCSV(data: any[]): string {
+    if (data.length === 0) return '';
+    
+    // Get headers from first object
+    const headers = Object.keys(data[0]);
+    const csvHeaders = headers.join(',');
+    
+    // Convert rows
+    const csvRows = data.map(row => {
+      return headers.map(header => {
+        const value = row[header];
+        // Escape quotes and wrap in quotes if contains comma
+        const escaped = ('' + value).replace(/"/g, '""');
+        return escaped.includes(',') ? `"${escaped}"` : escaped;
+      }).join(',');
+    });
+    
+    return [csvHeaders, ...csvRows].join('\n');
+  }
+  flattenUndrafted(data: Pokemon[]): any[] {
+    const flattened: any[] = [];
+    
+    data.forEach(main => {
+        flattened.push({
+          TeamName: "Null",
+          Name: main.name,
+          Tier: main.tier,
+          isTeraCaptain: main.isTeraCaptain
+        });
+    });
+    
+    return flattened;
+  }
+
+  flattenDrafted(data: Team[]): any[] {
+    const flattened: any[] = [];
+    data.forEach(main => {
+      
+      main.pokemon.forEach(sub => {
+        flattened.push({
+          TeamName: main.name,
+          Name: sub.name,
+          Tier: sub.tier,
+          isTeraCaptain: sub.isTeraCaptain
+        });
+      });
+    });
+    return flattened;
+  }
+
+  downloadCSV(csv: string, filename: string) {
+    // Ensure filename ends with .csv
+    if (!filename.endsWith('.csv')) {
+      filename = filename + '.csv';
+    }
+    
+    // Use correct MIME type for CSV
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    
+    if (link.download !== undefined) {
+      const url = URL.createObjectURL(blob);
+      link.setAttribute('href', url);
+      link.setAttribute('download', filename);
+      link.style.visibility = 'hidden';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url); // Clean up
+    }
+  }
+
   searchTerm: string = '';
 
   onSearchChange() {

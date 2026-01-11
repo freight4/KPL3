@@ -8,7 +8,7 @@ import { Pokedex } from '../classes/Pokedex';
   providedIn: 'root'
 })
 export class PokedexService {
-  private dataUrl = 'app/outputs/current/pokemon-data.json';
+  private dataUrl = 'app/outputs/S3/pokemon-data.json';
 
   constructor(private http: HttpClient) {}
 

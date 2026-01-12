@@ -1,4 +1,4 @@
-<h2 style="text-align:center; margin:20px 0; color: #ffffff">
+<h2 style="text-align:center; margin:20px 0; color:#ffffff;">
   Team Schedule
 </h2>
 
@@ -23,8 +23,9 @@
   </button>
 </div>
 
-<!-- Schedule Table Container -->
+<!-- Schedule Container -->
 <div
+  *ngIf="schedule.length"
   style="
     width:90%;
     margin:auto;
@@ -34,23 +35,65 @@
     box-shadow:0 2px 6px rgba(0,0,0,0.2);
   "
 >
-  <table style="width:100%; border-collapse: collapse;">
-    <thead>
-      <tr style="background: #e0e0e0;">
-        <th style="padding:8px; border:1px solid #000000;">Match #</th>
-        <th style="padding:8px; border:1px solid #000000;">Team 1</th>
-        <th style="padding:8px; border:1px solid #000000;">Team 2</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        *ngFor="let match of schedule; let i = index"
-        style="border-bottom:1px solid #000000; background-color: rgba(224,224,224,0.5);"
-      >
-        <td style="text-align:center; padding:6px; color:#000000;">{{ i + 1 }}</td>
-        <td style="text-align:center; padding:6px; color:#000000;">{{ match[0].name }}</td>
-        <td style="text-align:center; padding:6px; color:#000000;">{{ match[1].name }}</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <!-- Week Blocks -->
+  <div *ngFor="let week of schedule" style="margin-bottom:24px;">
+
+    <!-- Week Header -->
+    <h3 style="text-align:center; color:#ffffff; margin-bottom:12px;">
+      Week {{ week.week }}
+    </h3>
+
+    <!-- Weekly Matchups -->
+    <table style="width:100%; border-collapse:collapse;">
+      <thead>
+        <tr style="background:#e0e0e0;">
+          <th style="padding:8px; border:1px solid #000000;">Home</th>
+          <th style="padding:8px; border:1px solid #000000;">vs</th>
+          <th style="padding:8px; border:1px solid #000000;">Away</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr
+          *ngFor="let game of week.games"
+          style="
+            border-bottom:1px solid #000000;
+            background-color: rgba(224,224,224,0.5);
+          "
+        >
+          <td style="text-align:center; padding:6px; color:#000000;">
+            {{ game[0].name }}
+          </td>
+          <td style="text-align:center; padding:6px; color:#000000;">
+            vs
+          </td>
+          <td style="text-align:center; padding:6px; color:#000000;">
+            {{ game[1].name }}
+            
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+<div *ngIf="test_schedule.length" style="text-align:center; margin:24px 0;">
+  <button
+    (click)="exportScheduleToCSV()"
+    style="
+      padding:8px 16px;
+      font-weight:bold;
+      border-radius:6px;
+      border:none;
+      cursor:pointer;
+      background-color:#2ecc71;
+      color:white;
+      transition: all 0.2s ease-in-out;
+    "
+    onmouseover="this.style.backgroundColor='#27ae60'"
+    onmouseout="this.style.backgroundColor='#2ecc71'"
+  >
+    Export Schedule to CSV
+  </button>
 </div>

@@ -212,6 +212,8 @@ export class DraftComponent implements OnInit {
           TeamName: "Null",
           Name: main.name,
           Tier: main.tier,
+          Num: main.num,
+          Forme: main.forme,
           isTeraCaptain: main.isTeraCaptain
         });
     });
@@ -228,6 +230,8 @@ export class DraftComponent implements OnInit {
           TeamName: main.name,
           Name: sub.name,
           Tier: sub.tier,
+          Num: sub.num,
+          Forme: sub.forme,
           isTeraCaptain: sub.isTeraCaptain
         });
       });

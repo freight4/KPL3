@@ -22,7 +22,25 @@
     Generate Schedule
   </button>
 </div>
-
+<div *ngIf="schedule.length" style="text-align:center; margin:24px 0;">
+  <button
+    (click)="exportScheduleToCSV()"
+    style="
+      padding:8px 16px;
+      font-weight:bold;
+      border-radius:6px;
+      border:none;
+      cursor:pointer;
+      background-color:#2ecc71;
+      color:white;
+      transition: all 0.2s ease-in-out;
+    "
+    onmouseover="this.style.backgroundColor='#27ae60'"
+    onmouseout="this.style.backgroundColor='#2ecc71'"
+  >
+    Export Schedule to CSV
+  </button>
+</div>
 <!-- Schedule Container -->
 <div
   *ngIf="schedule.length"
@@ -78,22 +96,4 @@
 
   </div>
 </div>
-<div *ngIf="test_schedule.length" style="text-align:center; margin:24px 0;">
-  <button
-    (click)="exportScheduleToCSV()"
-    style="
-      padding:8px 16px;
-      font-weight:bold;
-      border-radius:6px;
-      border:none;
-      cursor:pointer;
-      background-color:#2ecc71;
-      color:white;
-      transition: all 0.2s ease-in-out;
-    "
-    onmouseover="this.style.backgroundColor='#27ae60'"
-    onmouseout="this.style.backgroundColor='#2ecc71'"
-  >
-    Export Schedule to CSV
-  </button>
-</div>
+

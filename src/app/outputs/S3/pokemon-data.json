@@ -283,7 +283,7 @@
   {
     "name": "Venusaur",
     "num": 3,
-    "tier": "PU",
+    "tier": "ZU",
     "forme": "",
     "types": [
       "grass",
@@ -3675,7 +3675,7 @@
   {
     "name": "Ninetales-Alola",
     "num": 38,
-    "tier": "NU",
+    "tier": "PU",
     "forme": "Alola",
     "types": [
       "ice",
@@ -4769,7 +4769,7 @@
   {
     "name": "Venomoth",
     "num": 49,
-    "tier": "ZU",
+    "tier": "ZUBL",
     "forme": "",
     "types": [
       "bug",
@@ -11398,7 +11398,7 @@
   {
     "name": "Muk-Alola",
     "num": 89,
-    "tier": "NU",
+    "tier": "RU",
     "forme": "Alola",
     "types": [
       "poison",
@@ -13557,7 +13557,7 @@
   {
     "name": "Hitmonlee",
     "num": 106,
-    "tier": "ZU",
+    "tier": "PU",
     "forme": "",
     "types": [
       "fighting"
@@ -14135,7 +14135,7 @@
   {
     "name": "Weezing-Galar",
     "num": 110,
-    "tier": "RU",
+    "tier": "OU",
     "forme": "Galar",
     "types": [
       "poison",
@@ -15880,7 +15880,7 @@
   {
     "name": "Gyarados",
     "num": 130,
-    "tier": "NUBL",
+    "tier": "RUBL",
     "forme": "",
     "types": [
       "water",
@@ -17302,7 +17302,7 @@
   {
     "name": "Articuno-Galar",
     "num": 144,
-    "tier": "PU",
+    "tier": "NU",
     "forme": "Galar",
     "types": [
       "psychic",
@@ -17553,7 +17553,7 @@
   {
     "name": "Zapdos-Galar",
     "num": 145,
-    "tier": "RU",
+    "tier": "UU",
     "forme": "Galar",
     "types": [
       "fighting",
@@ -18374,7 +18374,7 @@
   {
     "name": "Mew",
     "num": 151,
-    "tier": "UU",
+    "tier": "RU",
     "forme": "",
     "types": [
       "psychic"
@@ -19629,7 +19629,7 @@
   {
     "name": "Typhlosion-Hisui",
     "num": 157,
-    "tier": "NU",
+    "tier": "PU",
     "forme": "Hisui",
     "types": [
       "fire",
@@ -22249,7 +22249,7 @@
   {
     "name": "Bellossom",
     "num": 182,
-    "tier": "ZU",
+    "tier": "ZUBL",
     "forme": "",
     "types": [
       "grass"
@@ -26450,7 +26450,7 @@
   {
     "name": "Qwilfish",
     "num": 211,
-    "tier": "ZU",
+    "tier": "PU",
     "forme": "",
     "types": [
       "water",
@@ -26605,7 +26605,7 @@
   {
     "name": "Qwilfish-Hisui",
     "num": 211,
-    "tier": "ZU",
+    "tier": "PU",
     "forme": "Hisui",
     "types": [
       "dark",
@@ -26885,7 +26885,7 @@
   {
     "name": "Heracross",
     "num": 214,
-    "tier": "NU",
+    "tier": "PUBL",
     "forme": "",
     "types": [
       "bug",
@@ -30103,7 +30103,7 @@
   {
     "name": "Blissey",
     "num": 242,
-    "tier": "OU",
+    "tier": "RU",
     "forme": "",
     "types": [
       "normal"
@@ -30970,7 +30970,7 @@
   {
     "name": "Tyranitar",
     "num": 248,
-    "tier": "UU",
+    "tier": "OU",
     "forme": "",
     "types": [
       "rock",
@@ -34888,7 +34888,7 @@
   {
     "name": "Breloom",
     "num": 286,
-    "tier": "NU",
+    "tier": "RU",
     "forme": "",
     "types": [
       "grass",
@@ -35687,7 +35687,7 @@
   {
     "name": "Hariyama",
     "num": 297,
-    "tier": "ZUBL",
+    "tier": "PU",
     "forme": "",
     "types": [
       "fighting"
@@ -37769,7 +37769,7 @@
   {
     "name": "Torkoal",
     "num": 324,
-    "tier": "PU",
+    "tier": "ZU",
     "forme": "",
     "types": [
       "fire"
@@ -39120,7 +39120,7 @@
   {
     "name": "Altaria",
     "num": 334,
-    "tier": "PU",
+    "tier": "NU",
     "forme": "",
     "types": [
       "dragon",
@@ -40264,7 +40264,7 @@
   {
     "name": "Milotic",
     "num": 350,
-    "tier": "NU",
+    "tier": "PU",
     "forme": "",
     "types": [
       "water"
@@ -41906,7 +41906,7 @@
   {
     "name": "Salamence",
     "num": 373,
-    "tier": "RU",
+    "tier": "RUBL",
     "forme": "",
     "types": [
       "dragon",
@@ -42701,7 +42701,7 @@
   {
     "name": "Registeel",
     "num": 379,
-    "tier": "NU",
+    "tier": "RU",
     "forme": "",
     "types": [
       "steel"
@@ -43520,7 +43520,7 @@
   {
     "name": "Deoxys-Speed",
     "num": 386,
-    "tier": "UU",
+    "tier": "OU",
     "forme": "Speed",
     "types": [
       "psychic"
@@ -43964,7 +43964,7 @@
   {
     "name": "Torterra",
     "num": 389,
-    "tier": "PUBL",
+    "tier": "RU",
     "forme": "",
     "types": [
       "grass",
@@ -47072,7 +47072,7 @@
   {
     "name": "Floatzel",
     "num": 419,
-    "tier": "ZU",
+    "tier": "PU",
     "forme": "",
     "types": [
       "water"
@@ -47342,7 +47342,7 @@
   {
     "name": "Gastrodon",
     "num": 423,
-    "tier": "NU",
+    "tier": "RU",
     "forme": "",
     "types": [
       "water",
@@ -47938,7 +47938,7 @@
   {
     "name": "Mismagius",
     "num": 429,
-    "tier": "ZU",
+    "tier": "NFE",
     "forme": "",
     "types": [
       "ghost"
@@ -50390,7 +50390,7 @@
   {
     "name": "Hippowdon",
     "num": 450,
-    "tier": "RU",
+    "tier": "UU",
     "forme": "",
     "types": [
       "ground"
@@ -50681,7 +50681,7 @@
   {
     "name": "Toxicroak",
     "num": 454,
-    "tier": "NU",
+    "tier": "ZU",
     "forme": "",
     "types": [
       "poison",
@@ -51683,7 +51683,7 @@
   {
     "name": "Rhyperior",
     "num": 464,
-    "tier": "RU",
+    "tier": "NU",
     "forme": "",
     "types": [
       "ground",
@@ -52754,7 +52754,7 @@
   {
     "name": "Mamoswine",
     "num": 473,
-    "tier": "RU",
+    "tier": "RUBL",
     "forme": "",
     "types": [
       "ice",
@@ -52902,7 +52902,7 @@
   {
     "name": "Porygon-Z",
     "num": 474,
-    "tier": "NU",
+    "tier": "RU",
     "forme": "",
     "types": [
       "normal"
@@ -53035,7 +53035,7 @@
   {
     "name": "Gallade",
     "num": 475,
-    "tier": "NUBL",
+    "tier": "RU",
     "forme": "",
     "types": [
       "psychic",
@@ -54712,7 +54712,7 @@
   {
     "name": "Azelf",
     "num": 482,
-    "tier": "RU",
+    "tier": "NUBL",
     "forme": "",
     "types": [
       "psychic"
@@ -54864,7 +54864,7 @@
   {
     "name": "Heatran",
     "num": 485,
-    "tier": "UU",
+    "tier": "OU",
     "forme": "",
     "types": [
       "fire",
@@ -55395,7 +55395,7 @@
   {
     "name": "Manaphy",
     "num": 490,
-    "tier": "RUBL",
+    "tier": "UU",
     "forme": "",
     "types": [
       "water"
@@ -55984,7 +55984,7 @@
   {
     "name": "Serperior",
     "num": 497,
-    "tier": "UU",
+    "tier": "RUBL",
     "forme": "",
     "types": [
       "grass"
@@ -58827,7 +58827,7 @@
   {
     "name": "Lilligant-Hisui",
     "num": 549,
-    "tier": "NUBL",
+    "tier": "RUBL",
     "forme": "Hisui",
     "types": [
       "grass",
@@ -59834,7 +59834,7 @@
   {
     "name": "Scrafty",
     "num": 560,
-    "tier": "PU",
+    "tier": "NU",
     "forme": "",
     "types": [
       "dark",
@@ -60389,7 +60389,7 @@
   {
     "name": "Zoroark-Hisui",
     "num": 571,
-    "tier": "RU",
+    "tier": "RUBL",
     "forme": "Hisui",
     "types": [
       "normal",
@@ -61460,7 +61460,7 @@
   {
     "name": "Reuniclus",
     "num": 579,
-    "tier": "RU",
+    "tier": "NU",
     "forme": "",
     "types": [
       "psychic"
@@ -62219,7 +62219,7 @@
   {
     "name": "Amoonguss",
     "num": 591,
-    "tier": "NU",
+    "tier": "PU",
     "forme": "",
     "types": [
       "grass",
@@ -62584,7 +62584,7 @@
   {
     "name": "Galvantula",
     "num": 596,
-    "tier": "NU",
+    "tier": "PU",
     "forme": "",
     "types": [
       "bug",
@@ -64365,7 +64365,7 @@
   {
     "name": "Mienshao",
     "num": 620,
-    "tier": "NUBL",
+    "tier": "RU",
     "forme": "",
     "types": [
       "fighting"
@@ -65222,7 +65222,7 @@
   {
     "name": "Braviary",
     "num": 628,
-    "tier": "ZU",
+    "tier": "NU",
     "forme": "",
     "types": [
       "normal",
@@ -66391,7 +66391,7 @@
   {
     "name": "Terrakion",
     "num": 639,
-    "tier": "RU",
+    "tier": "NUBL",
     "forme": "",
     "types": [
       "rock",
@@ -66705,7 +66705,7 @@
   {
     "name": "Tornadus-Therian",
     "num": 641,
-    "tier": "UU",
+    "tier": "OU",
     "forme": "Therian",
     "types": [
       "flying"
@@ -67357,139 +67357,6 @@
     }
   },
   {
-    "name": "Keldeo-Resolute",
-    "num": 647,
-    "tier": "UU",
-    "forme": "Resolute",
-    "types": [
-      "water",
-      "fighting"
-    ],
-    "abilities": {
-      "0": "Justified"
-    },
-    "learnset": [
-      "swords-dance",
-      "cut",
-      "double-kick",
-      "take-down",
-      "double-edge",
-      "leer",
-      "roar",
-      "hydro-pump",
-      "surf",
-      "bubble-beam",
-      "hyper-beam",
-      "low-kick",
-      "strength",
-      "toxic",
-      "double-team",
-      "reflect",
-      "swift",
-      "rest",
-      "substitute",
-      "snore",
-      "reversal",
-      "protect",
-      "icy-wind",
-      "endure",
-      "false-swipe",
-      "swagger",
-      "sleep-talk",
-      "return",
-      "frustration",
-      "safeguard",
-      "pain-split",
-      "megahorn",
-      "baton-pass",
-      "hidden-power",
-      "rain-dance",
-      "sunny-day",
-      "psych-up",
-      "rock-smash",
-      "hail",
-      "facade",
-      "taunt",
-      "helping-hand",
-      "superpower",
-      "revenge",
-      "brick-break",
-      "endeavor",
-      "secret-power",
-      "muddy-water",
-      "aerial-ace",
-      "bounce",
-      "covet",
-      "calm-mind",
-      "water-pulse",
-      "close-combat",
-      "last-resort",
-      "aura-sphere",
-      "poison-jab",
-      "aqua-tail",
-      "air-slash",
-      "x-scissor",
-      "vacuum-wave",
-      "focus-blast",
-      "giga-impact",
-      "stone-edge",
-      "aqua-jet",
-      "round",
-      "quick-guard",
-      "scald",
-      "retaliate",
-      "work-up",
-      "sacred-sword",
-      "secret-sword",
-      "confide",
-      "smart-strike",
-      "liquidation",
-      "coaching",
-      "flip-turn",
-      "tera-blast",
-      "trailblaze",
-      "chilling-water",
-      "upper-hand"
-    ],
-    "baseStats": {
-      "hp": 91,
-      "atk": 72,
-      "def": 90,
-      "spa": 129,
-      "spd": 90,
-      "spe": 108
-    },
-    "isTeraCaptain": false,
-    "abilityDefenses": {},
-    "tierCost": 8,
-    "teraCost": 0,
-    "cost": 8,
-    "baseStatTotal": 580,
-    "effectiveBaseStatTotal": 508,
-    "spritePath": "/sprite_folder/sprites/647_Resolute.png",
-    "defensiveTypes": {
-      "Bug": 0.5,
-      "Dark": 0.5,
-      "Dragon": 1,
-      "Electric": 2,
-      "Fairy": 2,
-      "Fighting": 1,
-      "Fire": 0.5,
-      "Flying": 2,
-      "Ghost": 1,
-      "Grass": 2,
-      "Ground": 1,
-      "Ice": 0.5,
-      "Normal": 1,
-      "Poison": 1,
-      "Psychic": 2,
-      "Rock": 0.5,
-      "Steel": 0.5,
-      "Stellar": 1,
-      "Water": 0.5
-    }
-  },
-  {
     "name": "Meloetta",
     "num": 648,
     "tier": "NU",
@@ -67536,163 +67403,6 @@
       "Poison": 1,
       "Psychic": 0.5,
       "Rock": 1,
-      "Steel": 1,
-      "Stellar": 1,
-      "Water": 1
-    }
-  },
-  {
-    "name": "Meloetta-Pirouette",
-    "num": 648,
-    "tier": "NU",
-    "forme": "Pirouette",
-    "types": [
-      "normal",
-      "fighting"
-    ],
-    "abilities": {
-      "0": "Serene Grace"
-    },
-    "learnset": [
-      "fire-punch",
-      "ice-punch",
-      "thunder-punch",
-      "swords-dance",
-      "sing",
-      "psybeam",
-      "hyper-beam",
-      "low-kick",
-      "strength",
-      "thunderbolt",
-      "thunder-wave",
-      "thunder",
-      "toxic",
-      "confusion",
-      "psychic",
-      "quick-attack",
-      "double-team",
-      "light-screen",
-      "metronome",
-      "swift",
-      "dream-eater",
-      "flash",
-      "rest",
-      "substitute",
-      "snore",
-      "reversal",
-      "protect",
-      "perish-song",
-      "endure",
-      "charm",
-      "swagger",
-      "sleep-talk",
-      "heal-bell",
-      "return",
-      "frustration",
-      "safeguard",
-      "baton-pass",
-      "hidden-power",
-      "rain-dance",
-      "sunny-day",
-      "psych-up",
-      "shadow-ball",
-      "rock-smash",
-      "uproar",
-      "facade",
-      "focus-punch",
-      "helping-hand",
-      "trick",
-      "role-play",
-      "magic-coat",
-      "recycle",
-      "brick-break",
-      "knock-off",
-      "skill-swap",
-      "snatch",
-      "secret-power",
-      "teeter-dance",
-      "hyper-voice",
-      "fake-tears",
-      "signal-beam",
-      "covet",
-      "calm-mind",
-      "shock-wave",
-      "gravity",
-      "wake-up-slap",
-      "u-turn",
-      "close-combat",
-      "payback",
-      "embargo",
-      "fling",
-      "last-resort",
-      "drain-punch",
-      "focus-blast",
-      "energy-ball",
-      "giga-impact",
-      "shadow-claw",
-      "zen-headbutt",
-      "trick-room",
-      "stone-edge",
-      "grass-knot",
-      "charge-beam",
-      "hone-claws",
-      "wonder-room",
-      "psyshock",
-      "telekinesis",
-      "magic-room",
-      "low-sweep",
-      "round",
-      "echoed-voice",
-      "ally-switch",
-      "acrobatics",
-      "retaliate",
-      "work-up",
-      "dual-chop",
-      "relic-song",
-      "disarming-voice",
-      "play-rough",
-      "confide",
-      "dazzling-gleam",
-      "power-up-punch",
-      "laser-focus",
-      "coaching",
-      "triple-axel",
-      "tera-blast",
-      "alluring-voice"
-    ],
-    "baseStats": {
-      "hp": 100,
-      "atk": 128,
-      "def": 90,
-      "spa": 77,
-      "spd": 77,
-      "spe": 128
-    },
-    "isTeraCaptain": false,
-    "abilityDefenses": {},
-    "tierCost": 4,
-    "teraCost": 0,
-    "cost": 4,
-    "baseStatTotal": 600,
-    "effectiveBaseStatTotal": 523,
-    "spritePath": "/sprite_folder/sprites/648_Pirouette.png",
-    "defensiveTypes": {
-      "Bug": 0.5,
-      "Dark": 0.5,
-      "Dragon": 1,
-      "Electric": 1,
-      "Fairy": 2,
-      "Fighting": 2,
-      "Fire": 1,
-      "Flying": 2,
-      "Ghost": 0,
-      "Grass": 1,
-      "Ground": 1,
-      "Ice": 1,
-      "Normal": 1,
-      "Poison": 1,
-      "Psychic": 2,
-      "Rock": 0.5,
       "Steel": 1,
       "Stellar": 1,
       "Water": 1
@@ -69000,59 +68710,6 @@
     }
   },
   {
-    "name": "Greninja-Bond",
-    "num": 658,
-    "tier": "UU",
-    "forme": "Bond",
-    "types": [
-      "water",
-      "dark"
-    ],
-    "abilities": {
-      "0": "Battle Bond"
-    },
-    "learnset": [],
-    "baseStats": {
-      "hp": 72,
-      "atk": 95,
-      "def": 67,
-      "spa": 103,
-      "spd": 71,
-      "spe": 122
-    },
-    "isTeraCaptain": false,
-    "abilityDefenses": {},
-    "learnsetFailed": true,
-    "tierCost": 8,
-    "teraCost": 0,
-    "cost": 8,
-    "baseStatTotal": 530,
-    "effectiveBaseStatTotal": 435,
-    "spritePath": "/sprite_folder/sprites/658_Bond.png",
-    "defensiveTypes": {
-      "Bug": 2,
-      "Dark": 0.5,
-      "Dragon": 1,
-      "Electric": 2,
-      "Fairy": 2,
-      "Fighting": 2,
-      "Fire": 0.5,
-      "Flying": 1,
-      "Ghost": 0.5,
-      "Grass": 2,
-      "Ground": 1,
-      "Ice": 0.5,
-      "Normal": 1,
-      "Poison": 1,
-      "Psychic": 0,
-      "Rock": 1,
-      "Steel": 0.5,
-      "Stellar": 1,
-      "Water": 0.5,
-      "prankster": 0
-    }
-  },
-  {
     "name": "Fletchling",
     "num": 661,
     "tier": "LC",
@@ -69624,114 +69281,6 @@
     "baseStatTotal": 411,
     "effectiveBaseStatTotal": 359,
     "spritePath": "/sprite_folder/sprites/666.png",
-    "defensiveTypes": {
-      "Bug": 0.5,
-      "Dark": 1,
-      "Dragon": 1,
-      "Electric": 2,
-      "Fairy": 1,
-      "Fighting": 0.25,
-      "Fire": 2,
-      "Flying": 2,
-      "Ghost": 1,
-      "Grass": 0.25,
-      "Ground": 0,
-      "Ice": 2,
-      "Normal": 1,
-      "Poison": 1,
-      "Psychic": 1,
-      "Rock": 4,
-      "Steel": 1,
-      "Stellar": 1,
-      "Water": 1
-    }
-  },
-  {
-    "name": "Vivillon-Fancy",
-    "num": 666,
-    "tier": "ZU",
-    "forme": "Fancy",
-    "types": [
-      "bug",
-      "flying"
-    ],
-    "abilities": {
-      "0": "Shield Dust",
-      "1": "Compound Eyes",
-      "H": "Friend Guard"
-    },
-    "learnset": [],
-    "baseStats": {
-      "hp": 80,
-      "atk": 52,
-      "def": 50,
-      "spa": 90,
-      "spd": 50,
-      "spe": 89
-    },
-    "isTeraCaptain": false,
-    "abilityDefenses": {},
-    "learnsetFailed": true,
-    "tierCost": 2,
-    "teraCost": 0,
-    "cost": 2,
-    "baseStatTotal": 411,
-    "effectiveBaseStatTotal": 359,
-    "spritePath": "/sprite_folder/sprites/666_Fancy.png",
-    "defensiveTypes": {
-      "Bug": 0.5,
-      "Dark": 1,
-      "Dragon": 1,
-      "Electric": 2,
-      "Fairy": 1,
-      "Fighting": 0.25,
-      "Fire": 2,
-      "Flying": 2,
-      "Ghost": 1,
-      "Grass": 0.25,
-      "Ground": 0,
-      "Ice": 2,
-      "Normal": 1,
-      "Poison": 1,
-      "Psychic": 1,
-      "Rock": 4,
-      "Steel": 1,
-      "Stellar": 1,
-      "Water": 1
-    }
-  },
-  {
-    "name": "Vivillon-Pokeball",
-    "num": 666,
-    "tier": "ZU",
-    "forme": "Pokeball",
-    "types": [
-      "bug",
-      "flying"
-    ],
-    "abilities": {
-      "0": "Shield Dust",
-      "1": "Compound Eyes",
-      "H": "Friend Guard"
-    },
-    "learnset": [],
-    "baseStats": {
-      "hp": 80,
-      "atk": 52,
-      "def": 50,
-      "spa": 90,
-      "spd": 50,
-      "spe": 89
-    },
-    "isTeraCaptain": false,
-    "abilityDefenses": {},
-    "learnsetFailed": true,
-    "tierCost": 2,
-    "teraCost": 0,
-    "cost": 2,
-    "baseStatTotal": 411,
-    "effectiveBaseStatTotal": 359,
-    "spritePath": "/sprite_folder/sprites/666_Pokeball.png",
     "defensiveTypes": {
       "Bug": 0.5,
       "Dark": 1,
@@ -71195,7 +70744,7 @@
   {
     "name": "Dragalge",
     "num": 691,
-    "tier": "NU",
+    "tier": "PUBL",
     "forme": "",
     "types": [
       "poison",
@@ -71697,7 +71246,7 @@
   {
     "name": "Hawlucha",
     "num": 701,
-    "tier": "UU",
+    "tier": "RUBL",
     "forme": "",
     "types": [
       "fighting",
@@ -73364,7 +72913,7 @@
   {
     "name": "Avalugg-Hisui",
     "num": 713,
-    "tier": "ZU",
+    "tier": "PU",
     "forme": "Hisui",
     "types": [
       "ice",
@@ -73745,7 +73294,7 @@
   {
     "name": "Diancie",
     "num": 719,
-    "tier": "NU",
+    "tier": "RU",
     "forme": "",
     "types": [
       "rock",
@@ -74186,7 +73735,7 @@
   {
     "name": "Volcanion",
     "num": 721,
-    "tier": "RU",
+    "tier": "RUBL",
     "forme": "",
     "types": [
       "fire",
@@ -76912,7 +76461,7 @@
   {
     "name": "Oricorio-Pom-Pom",
     "num": 741,
-    "tier": "NUBL",
+    "tier": "RUBL",
     "forme": "Pom-Pom",
     "types": [
       "electric",
@@ -77643,7 +77192,7 @@
   {
     "name": "Lycanroc",
     "num": 745,
-    "tier": "PU",
+    "tier": "ZU",
     "forme": "",
     "types": [
       "rock"
@@ -77839,7 +77388,7 @@
   {
     "name": "Lycanroc-Dusk",
     "num": 745,
-    "tier": "NUBL",
+    "tier": "RU",
     "forme": "Dusk",
     "types": [
       "rock"
@@ -78563,7 +78112,7 @@
   {
     "name": "Araquanid",
     "num": 752,
-    "tier": "OU",
+    "tier": "NU",
     "forme": "",
     "types": [
       "water",
@@ -79562,7 +79111,7 @@
   {
     "name": "Comfey",
     "num": 764,
-    "tier": "UU",
+    "tier": "RUBL",
     "forme": "",
     "types": [
       "fairy"
@@ -80112,7 +79661,7 @@
   {
     "name": "Palossand",
     "num": 770,
-    "tier": "ZU",
+    "tier": "PU",
     "forme": "",
     "types": [
       "ghost",
@@ -80240,7 +79789,7 @@
   {
     "name": "Minior",
     "num": 774,
-    "tier": "PU",
+    "tier": "ZU",
     "forme": "",
     "types": [
       "rock",
@@ -80267,59 +79816,6 @@
     "baseStatTotal": 500,
     "effectiveBaseStatTotal": 400,
     "spritePath": "/sprite_folder/sprites/774.png",
-    "defensiveTypes": {
-      "sandstorm": 0,
-      "Bug": 0.5,
-      "Dark": 1,
-      "Dragon": 1,
-      "Electric": 2,
-      "Fairy": 1,
-      "Fighting": 1,
-      "Fire": 0.5,
-      "Flying": 0.5,
-      "Ghost": 1,
-      "Grass": 1,
-      "Ground": 0,
-      "Ice": 2,
-      "Normal": 0.5,
-      "Poison": 0.5,
-      "Psychic": 1,
-      "Rock": 2,
-      "Steel": 2,
-      "Stellar": 1,
-      "Water": 2
-    }
-  },
-  {
-    "name": "Minior-Meteor",
-    "num": 774,
-    "tier": "PU",
-    "forme": "Meteor",
-    "types": [
-      "rock",
-      "flying"
-    ],
-    "abilities": {
-      "0": "Shields Down"
-    },
-    "learnset": [],
-    "baseStats": {
-      "hp": 60,
-      "atk": 60,
-      "def": 100,
-      "spa": 60,
-      "spd": 100,
-      "spe": 60
-    },
-    "isTeraCaptain": false,
-    "abilityDefenses": {},
-    "learnsetFailed": true,
-    "tierCost": 3,
-    "teraCost": 0,
-    "cost": 3,
-    "baseStatTotal": 440,
-    "effectiveBaseStatTotal": 380,
-    "spritePath": "/sprite_folder/sprites/774_Meteor.png",
     "defensiveTypes": {
       "sandstorm": 0,
       "Bug": 0.5,
@@ -80521,150 +80017,9 @@
     }
   },
   {
-    "name": "Mimikyu-Busted",
-    "num": 778,
-    "tier": "RU",
-    "forme": "Busted",
-    "types": [
-      "ghost",
-      "fairy"
-    ],
-    "abilities": {
-      "0": "Disguise"
-    },
-    "learnset": [
-      "scratch",
-      "swords-dance",
-      "take-down",
-      "surf",
-      "hyper-beam",
-      "thunderbolt",
-      "thunder-wave",
-      "thunder",
-      "toxic",
-      "psychic",
-      "night-shade",
-      "mimic",
-      "screech",
-      "double-team",
-      "confuse-ray",
-      "light-screen",
-      "dream-eater",
-      "leech-life",
-      "splash",
-      "rest",
-      "slash",
-      "substitute",
-      "thief",
-      "nightmare",
-      "snore",
-      "curse",
-      "spite",
-      "protect",
-      "feint-attack",
-      "destiny-bond",
-      "giga-drain",
-      "endure",
-      "charm",
-      "swagger",
-      "attract",
-      "sleep-talk",
-      "return",
-      "frustration",
-      "safeguard",
-      "pain-split",
-      "hidden-power",
-      "rain-dance",
-      "sunny-day",
-      "psych-up",
-      "shadow-ball",
-      "beat-up",
-      "will-o-wisp",
-      "facade",
-      "taunt",
-      "trick",
-      "grudge",
-      "snatch",
-      "astonish",
-      "bulk-up",
-      "covet",
-      "payback",
-      "embargo",
-      "fling",
-      "copycat",
-      "last-resort",
-      "dark-pulse",
-      "x-scissor",
-      "drain-punch",
-      "giga-impact",
-      "shadow-claw",
-      "shadow-sneak",
-      "trick-room",
-      "charge-beam",
-      "wood-hammer",
-      "hone-claws",
-      "telekinesis",
-      "magic-room",
-      "after-you",
-      "round",
-      "hex",
-      "work-up",
-      "phantom-force",
-      "draining-kiss",
-      "misty-terrain",
-      "play-rough",
-      "confide",
-      "dazzling-gleam",
-      "baby-doll-eyes",
-      "infestation",
-      "burning-jealousy",
-      "tera-blast",
-      "pounce",
-      "trailblaze"
-    ],
-    "baseStats": {
-      "hp": 55,
-      "atk": 90,
-      "def": 80,
-      "spa": 50,
-      "spd": 105,
-      "spe": 96
-    },
-    "isTeraCaptain": false,
-    "abilityDefenses": {},
-    "tierCost": 6,
-    "teraCost": 0,
-    "cost": 6,
-    "baseStatTotal": 476,
-    "effectiveBaseStatTotal": 426,
-    "spritePath": "/sprite_folder/sprites/778_Busted.png",
-    "defensiveTypes": {
-      "trapped": 0,
-      "Bug": 0.25,
-      "Dark": 1,
-      "Dragon": 0,
-      "Electric": 1,
-      "Fairy": 1,
-      "Fighting": 0,
-      "Fire": 1,
-      "Flying": 1,
-      "Ghost": 2,
-      "Grass": 1,
-      "Ground": 1,
-      "Ice": 1,
-      "Normal": 0,
-      "Poison": 1,
-      "Psychic": 1,
-      "Rock": 1,
-      "Steel": 2,
-      "Stellar": 1,
-      "Water": 1
-    }
-  },
-  {
     "name": "Bruxish",
     "num": 779,
-    "tier": "ZUBL",
+    "tier": "PU",
     "forme": "",
     "types": [
       "water",
@@ -81574,7 +80929,7 @@
   {
     "name": "Thwackey",
     "num": 811,
-    "tier": "NFE",
+    "tier": "NU",
     "forme": "",
     "types": [
       "grass"
@@ -82372,7 +81727,7 @@
   {
     "name": "Inteleon",
     "num": 818,
-    "tier": "NU",
+    "tier": "PUBL",
     "forme": "",
     "types": [
       "water"
@@ -84184,212 +83539,6 @@
     }
   },
   {
-    "name": "Cramorant-Gulping",
-    "num": 845,
-    "tier": "PU",
-    "forme": "Gulping",
-    "types": [
-      "flying",
-      "water"
-    ],
-    "abilities": {
-      "0": "Gulp Missile"
-    },
-    "learnset": [
-      "fly",
-      "fury-attack",
-      "thrash",
-      "water-gun",
-      "hydro-pump",
-      "surf",
-      "ice-beam",
-      "blizzard",
-      "hyper-beam",
-      "peck",
-      "drill-peck",
-      "agility",
-      "amnesia",
-      "rest",
-      "substitute",
-      "thief",
-      "snore",
-      "reversal",
-      "protect",
-      "icy-wind",
-      "endure",
-      "steel-wing",
-      "attract",
-      "sleep-talk",
-      "rain-dance",
-      "whirlpool",
-      "uproar",
-      "stockpile",
-      "spit-up",
-      "swallow",
-      "facade",
-      "superpower",
-      "dive",
-      "feather-dance",
-      "weather-ball",
-      "aerial-ace",
-      "roost",
-      "pluck",
-      "assurance",
-      "aqua-ring",
-      "air-slash",
-      "brave-bird",
-      "giga-impact",
-      "defog",
-      "round",
-      "scald",
-      "hurricane",
-      "belch",
-      "throat-chop",
-      "liquidation",
-      "dual-wingbeat"
-    ],
-    "baseStats": {
-      "hp": 70,
-      "atk": 85,
-      "def": 55,
-      "spa": 85,
-      "spd": 95,
-      "spe": 85
-    },
-    "isTeraCaptain": false,
-    "abilityDefenses": {},
-    "tierCost": 3,
-    "teraCost": 0,
-    "cost": 3,
-    "baseStatTotal": 475,
-    "effectiveBaseStatTotal": 390,
-    "spritePath": "/sprite_folder/sprites/845_Gulping.png",
-    "defensiveTypes": {
-      "Bug": 0.5,
-      "Dark": 1,
-      "Dragon": 1,
-      "Electric": 4,
-      "Fairy": 1,
-      "Fighting": 0.5,
-      "Fire": 0.5,
-      "Flying": 1,
-      "Ghost": 1,
-      "Grass": 1,
-      "Ground": 0,
-      "Ice": 1,
-      "Normal": 1,
-      "Poison": 1,
-      "Psychic": 1,
-      "Rock": 2,
-      "Steel": 0.5,
-      "Stellar": 1,
-      "Water": 0.5
-    }
-  },
-  {
-    "name": "Cramorant-Gorging",
-    "num": 845,
-    "tier": "PU",
-    "forme": "Gorging",
-    "types": [
-      "flying",
-      "water"
-    ],
-    "abilities": {
-      "0": "Gulp Missile"
-    },
-    "learnset": [
-      "fly",
-      "fury-attack",
-      "thrash",
-      "water-gun",
-      "hydro-pump",
-      "surf",
-      "ice-beam",
-      "blizzard",
-      "hyper-beam",
-      "peck",
-      "drill-peck",
-      "agility",
-      "amnesia",
-      "rest",
-      "substitute",
-      "thief",
-      "snore",
-      "reversal",
-      "protect",
-      "icy-wind",
-      "endure",
-      "steel-wing",
-      "attract",
-      "sleep-talk",
-      "rain-dance",
-      "whirlpool",
-      "uproar",
-      "stockpile",
-      "spit-up",
-      "swallow",
-      "facade",
-      "superpower",
-      "dive",
-      "feather-dance",
-      "weather-ball",
-      "aerial-ace",
-      "roost",
-      "pluck",
-      "assurance",
-      "aqua-ring",
-      "air-slash",
-      "brave-bird",
-      "giga-impact",
-      "defog",
-      "round",
-      "scald",
-      "hurricane",
-      "belch",
-      "throat-chop",
-      "liquidation",
-      "dual-wingbeat"
-    ],
-    "baseStats": {
-      "hp": 70,
-      "atk": 85,
-      "def": 55,
-      "spa": 85,
-      "spd": 95,
-      "spe": 85
-    },
-    "isTeraCaptain": false,
-    "abilityDefenses": {},
-    "tierCost": 3,
-    "teraCost": 0,
-    "cost": 3,
-    "baseStatTotal": 475,
-    "effectiveBaseStatTotal": 390,
-    "spritePath": "/sprite_folder/sprites/845_Gorging.png",
-    "defensiveTypes": {
-      "Bug": 0.5,
-      "Dark": 1,
-      "Dragon": 1,
-      "Electric": 4,
-      "Fairy": 1,
-      "Fighting": 0.5,
-      "Fire": 0.5,
-      "Flying": 1,
-      "Ghost": 1,
-      "Grass": 1,
-      "Ground": 0,
-      "Ice": 1,
-      "Normal": 1,
-      "Poison": 1,
-      "Psychic": 1,
-      "Rock": 2,
-      "Steel": 0.5,
-      "Stellar": 1,
-      "Water": 0.5
-    }
-  },
-  {
     "name": "Arrokuda",
     "num": 846,
     "tier": "LC",
@@ -84490,7 +83639,7 @@
   {
     "name": "Barraskewda",
     "num": 847,
-    "tier": "RU",
+    "tier": "NU",
     "forme": "",
     "types": [
       "water"
@@ -84667,7 +83816,7 @@
   {
     "name": "Toxtricity",
     "num": 849,
-    "tier": "PU",
+    "tier": "NU",
     "forme": "",
     "types": [
       "electric",
@@ -84696,144 +83845,6 @@
     "baseStatTotal": 502,
     "effectiveBaseStatTotal": 404,
     "spritePath": "/sprite_folder/sprites/849.png",
-    "defensiveTypes": {
-      "par": 0,
-      "Bug": 0.5,
-      "Dark": 1,
-      "Dragon": 1,
-      "Electric": 0.5,
-      "Fairy": 0.5,
-      "Fighting": 0.5,
-      "Fire": 1,
-      "Flying": 0.5,
-      "Ghost": 1,
-      "Grass": 0.5,
-      "Ground": 4,
-      "Ice": 1,
-      "Normal": 1,
-      "Poison": 0.5,
-      "Psychic": 2,
-      "Rock": 1,
-      "Steel": 0.5,
-      "Stellar": 1,
-      "Water": 1,
-      "psn": 0,
-      "tox": 0
-    }
-  },
-  {
-    "name": "Toxtricity-Low-Key",
-    "num": 849,
-    "tier": "PU",
-    "forme": "Low-Key",
-    "types": [
-      "electric",
-      "poison"
-    ],
-    "abilities": {
-      "0": "Punk Rock",
-      "1": "Minus",
-      "H": "Technician"
-    },
-    "learnset": [
-      "mega-punch",
-      "fire-punch",
-      "thunder-punch",
-      "mega-kick",
-      "take-down",
-      "leer",
-      "growl",
-      "acid",
-      "hyper-beam",
-      "thunder-shock",
-      "thunderbolt",
-      "thunder-wave",
-      "thunder",
-      "toxic",
-      "screech",
-      "metronome",
-      "swift",
-      "rest",
-      "substitute",
-      "thief",
-      "snore",
-      "flail",
-      "protect",
-      "scary-face",
-      "sludge-bomb",
-      "endure",
-      "charm",
-      "swagger",
-      "spark",
-      "attract",
-      "sleep-talk",
-      "encore",
-      "rain-dance",
-      "sunny-day",
-      "uproar",
-      "facade",
-      "charge",
-      "taunt",
-      "helping-hand",
-      "brick-break",
-      "endeavor",
-      "hyper-voice",
-      "metal-sound",
-      "poison-tail",
-      "shock-wave",
-      "payback",
-      "fling",
-      "toxic-spikes",
-      "poison-jab",
-      "drain-punch",
-      "giga-impact",
-      "thunder-fang",
-      "discharge",
-      "gunk-shot",
-      "charge-beam",
-      "venoshock",
-      "sludge-wave",
-      "electro-ball",
-      "acid-spray",
-      "round",
-      "stored-power",
-      "hex",
-      "volt-switch",
-      "electroweb",
-      "wild-charge",
-      "snarl",
-      "belch",
-      "noble-roar",
-      "boomburst",
-      "eerie-impulse",
-      "venom-drench",
-      "magnetic-flux",
-      "electric-terrain",
-      "nuzzle",
-      "throat-chop",
-      "tearful-look",
-      "overdrive",
-      "rising-voltage",
-      "tera-blast",
-      "trailblaze",
-      "psychic-noise"
-    ],
-    "baseStats": {
-      "hp": 75,
-      "atk": 98,
-      "def": 70,
-      "spa": 114,
-      "spd": 70,
-      "spe": 75
-    },
-    "isTeraCaptain": false,
-    "abilityDefenses": {},
-    "tierCost": 3,
-    "teraCost": 0,
-    "cost": 3,
-    "baseStatTotal": 502,
-    "effectiveBaseStatTotal": 404,
-    "spritePath": "/sprite_folder/sprites/849_Low-Key.png",
     "defensiveTypes": {
       "par": 0,
       "Bug": 0.5,
@@ -85095,59 +84106,6 @@
     "baseStatTotal": 508,
     "effectiveBaseStatTotal": 443,
     "spritePath": "/sprite_folder/sprites/855.png",
-    "defensiveTypes": {
-      "trapped": 0,
-      "Bug": 0.5,
-      "Dark": 2,
-      "Dragon": 1,
-      "Electric": 1,
-      "Fairy": 1,
-      "Fighting": 0,
-      "Fire": 1,
-      "Flying": 1,
-      "Ghost": 2,
-      "Grass": 1,
-      "Ground": 1,
-      "Ice": 1,
-      "Normal": 0,
-      "Poison": 0.5,
-      "Psychic": 1,
-      "Rock": 1,
-      "Steel": 1,
-      "Stellar": 1,
-      "Water": 1
-    }
-  },
-  {
-    "name": "Polteageist-Antique",
-    "num": 855,
-    "tier": "UUBL",
-    "forme": "Antique",
-    "types": [
-      "ghost"
-    ],
-    "abilities": {
-      "0": "Weak Armor",
-      "H": "Cursed Body"
-    },
-    "learnset": [],
-    "baseStats": {
-      "hp": 60,
-      "atk": 65,
-      "def": 65,
-      "spa": 134,
-      "spd": 114,
-      "spe": 70
-    },
-    "isTeraCaptain": false,
-    "abilityDefenses": {},
-    "learnsetFailed": true,
-    "tierCost": 9,
-    "teraCost": 0,
-    "cost": 9,
-    "baseStatTotal": 508,
-    "effectiveBaseStatTotal": 443,
-    "spritePath": "/sprite_folder/sprites/855_Antique.png",
     "defensiveTypes": {
       "trapped": 0,
       "Bug": 0.5,
@@ -86460,7 +85418,7 @@
   {
     "name": "Frosmoth",
     "num": 873,
-    "tier": "PU",
+    "tier": "PUBL",
     "forme": "",
     "types": [
       "ice",
@@ -87241,7 +86199,7 @@
   {
     "name": "Copperajah",
     "num": 879,
-    "tier": "PU",
+    "tier": "NU",
     "forme": "",
     "types": [
       "steel"
@@ -87360,7 +86318,7 @@
   {
     "name": "Duraludon",
     "num": 884,
-    "tier": "PUBL",
+    "tier": "NU",
     "forme": "",
     "types": [
       "steel",
@@ -88014,7 +86972,7 @@
   {
     "name": "Zarude",
     "num": 893,
-    "tier": "UU",
+    "tier": "UUBL",
     "forme": "",
     "types": [
       "dark",
@@ -88123,140 +87081,6 @@
     "baseStatTotal": 600,
     "effectiveBaseStatTotal": 530,
     "spritePath": "/sprite_folder/sprites/893.png",
-    "defensiveTypes": {
-      "prankster": 0,
-      "Bug": 4,
-      "Dark": 0.5,
-      "Dragon": 1,
-      "Electric": 0.5,
-      "Fairy": 2,
-      "Fighting": 2,
-      "Fire": 2,
-      "Flying": 2,
-      "Ghost": 0.5,
-      "Grass": 0.5,
-      "Ground": 0.5,
-      "Ice": 2,
-      "Normal": 1,
-      "Poison": 2,
-      "Psychic": 0,
-      "Rock": 1,
-      "Steel": 1,
-      "Stellar": 1,
-      "Water": 0.5,
-      "powder": 0
-    }
-  },
-  {
-    "name": "Zarude-Dada",
-    "num": 893,
-    "tier": "UU",
-    "forme": "Dada",
-    "types": [
-      "dark",
-      "grass"
-    ],
-    "abilities": {
-      "0": "Leaf Guard"
-    },
-    "learnset": [
-      "mega-punch",
-      "scratch",
-      "swords-dance",
-      "bind",
-      "vine-whip",
-      "mega-kick",
-      "body-slam",
-      "take-down",
-      "thrash",
-      "leer",
-      "bite",
-      "roar",
-      "hyper-beam",
-      "low-kick",
-      "growth",
-      "solar-beam",
-      "dig",
-      "swift",
-      "fury-swipes",
-      "rest",
-      "rock-slide",
-      "substitute",
-      "thief",
-      "snore",
-      "protect",
-      "scary-face",
-      "giga-drain",
-      "endure",
-      "swagger",
-      "sleep-talk",
-      "encore",
-      "iron-tail",
-      "synthesis",
-      "sunny-day",
-      "crunch",
-      "facade",
-      "focus-punch",
-      "taunt",
-      "helping-hand",
-      "superpower",
-      "revenge",
-      "brick-break",
-      "knock-off",
-      "hyper-voice",
-      "rock-tomb",
-      "bullet-seed",
-      "aerial-ace",
-      "bulk-up",
-      "mud-shot",
-      "magical-leaf",
-      "hammer-arm",
-      "u-turn",
-      "close-combat",
-      "payback",
-      "assurance",
-      "fling",
-      "dark-pulse",
-      "seed-bomb",
-      "drain-punch",
-      "energy-ball",
-      "giga-impact",
-      "nasty-plot",
-      "leaf-storm",
-      "power-whip",
-      "grass-knot",
-      "low-sweep",
-      "round",
-      "acrobatics",
-      "snarl",
-      "grassy-terrain",
-      "darkest-lariat",
-      "solar-blade",
-      "throat-chop",
-      "brutal-swing",
-      "stomping-tantrum",
-      "grassy-glide",
-      "lash-out",
-      "jungle-healing",
-      "tera-blast",
-      "trailblaze"
-    ],
-    "baseStats": {
-      "hp": 105,
-      "atk": 120,
-      "def": 105,
-      "spa": 70,
-      "spd": 95,
-      "spe": 105
-    },
-    "isTeraCaptain": false,
-    "abilityDefenses": {},
-    "tierCost": 8,
-    "teraCost": 0,
-    "cost": 8,
-    "baseStatTotal": 600,
-    "effectiveBaseStatTotal": 530,
-    "spritePath": "/sprite_folder/sprites/893_Dada.png",
     "defensiveTypes": {
       "prankster": 0,
       "Bug": 4,
@@ -89558,7 +88382,7 @@
   {
     "name": "Meowscarada",
     "num": 908,
-    "tier": "OU",
+    "tier": "UUBL",
     "forme": "",
     "types": [
       "grass",
@@ -90178,7 +89002,7 @@
   {
     "name": "Quaquaval",
     "num": 914,
-    "tier": "UU",
+    "tier": "UUBL",
     "forme": "",
     "types": [
       "water",
@@ -91963,168 +90787,7 @@
       "Water": 1
     }
   },
-  {
-    "name": "Squawkabilly-Blue",
-    "num": 931,
-    "tier": "ZU",
-    "forme": "Blue",
-    "types": [
-      "normal",
-      "flying"
-    ],
-    "abilities": {
-      "0": "Intimidate",
-      "1": "Hustle",
-      "H": "Guts"
-    },
-    "learnset": [],
-    "baseStats": {
-      "hp": 82,
-      "atk": 96,
-      "def": 51,
-      "spa": 45,
-      "spd": 51,
-      "spe": 92
-    },
-    "isTeraCaptain": false,
-    "abilityDefenses": {},
-    "learnsetFailed": true,
-    "tierCost": 2,
-    "teraCost": 0,
-    "cost": 2,
-    "baseStatTotal": 417,
-    "effectiveBaseStatTotal": 372,
-    "spritePath": "/sprite_folder/sprites/931_Blue.png",
-    "defensiveTypes": {
-      "Bug": 0.5,
-      "Dark": 1,
-      "Dragon": 1,
-      "Electric": 2,
-      "Fairy": 1,
-      "Fighting": 1,
-      "Fire": 1,
-      "Flying": 1,
-      "Ghost": 0,
-      "Grass": 0.5,
-      "Ground": 0,
-      "Ice": 2,
-      "Normal": 1,
-      "Poison": 1,
-      "Psychic": 1,
-      "Rock": 2,
-      "Steel": 1,
-      "Stellar": 1,
-      "Water": 1
-    }
-  },
-  {
-    "name": "Squawkabilly-Yellow",
-    "num": 931,
-    "tier": "ZU",
-    "forme": "Yellow",
-    "types": [
-      "normal",
-      "flying"
-    ],
-    "abilities": {
-      "0": "Intimidate",
-      "1": "Hustle",
-      "H": "Sheer Force"
-    },
-    "learnset": [],
-    "baseStats": {
-      "hp": 82,
-      "atk": 96,
-      "def": 51,
-      "spa": 45,
-      "spd": 51,
-      "spe": 92
-    },
-    "isTeraCaptain": false,
-    "abilityDefenses": {},
-    "learnsetFailed": true,
-    "tierCost": 2,
-    "teraCost": 0,
-    "cost": 2,
-    "baseStatTotal": 417,
-    "effectiveBaseStatTotal": 372,
-    "spritePath": "/sprite_folder/sprites/931_Yellow.png",
-    "defensiveTypes": {
-      "Bug": 0.5,
-      "Dark": 1,
-      "Dragon": 1,
-      "Electric": 2,
-      "Fairy": 1,
-      "Fighting": 1,
-      "Fire": 1,
-      "Flying": 1,
-      "Ghost": 0,
-      "Grass": 0.5,
-      "Ground": 0,
-      "Ice": 2,
-      "Normal": 1,
-      "Poison": 1,
-      "Psychic": 1,
-      "Rock": 2,
-      "Steel": 1,
-      "Stellar": 1,
-      "Water": 1
-    }
-  },
-  {
-    "name": "Squawkabilly-White",
-    "num": 931,
-    "tier": "ZU",
-    "forme": "White",
-    "types": [
-      "normal",
-      "flying"
-    ],
-    "abilities": {
-      "0": "Intimidate",
-      "1": "Hustle",
-      "H": "Sheer Force"
-    },
-    "learnset": [],
-    "baseStats": {
-      "hp": 82,
-      "atk": 96,
-      "def": 51,
-      "spa": 45,
-      "spd": 51,
-      "spe": 92
-    },
-    "isTeraCaptain": false,
-    "abilityDefenses": {},
-    "learnsetFailed": true,
-    "tierCost": 2,
-    "teraCost": 0,
-    "cost": 2,
-    "baseStatTotal": 417,
-    "effectiveBaseStatTotal": 372,
-    "spritePath": "/sprite_folder/sprites/931_White.png",
-    "defensiveTypes": {
-      "Bug": 0.5,
-      "Dark": 1,
-      "Dragon": 1,
-      "Electric": 2,
-      "Fairy": 1,
-      "Fighting": 1,
-      "Fire": 1,
-      "Flying": 1,
-      "Ghost": 0,
-      "Grass": 0.5,
-      "Ground": 0,
-      "Ice": 2,
-      "Normal": 1,
-      "Poison": 1,
-      "Psychic": 1,
-      "Rock": 2,
-      "Steel": 1,
-      "Stellar": 1,
-      "Water": 1
-    }
-  },
+  
   {
     "name": "Nacli",
     "num": 932,
@@ -92621,7 +91284,7 @@
   {
     "name": "Ceruledge",
     "num": 937,
-    "tier": "UUBL",
+    "tier": "OU",
     "forme": "",
     "types": [
       "fire",
@@ -92828,7 +91491,7 @@
   {
     "name": "Bellibolt",
     "num": 939,
-    "tier": "PU",
+    "tier": "NU",
     "forme": "",
     "types": [
       "electric"
@@ -93438,7 +92101,7 @@
   {
     "name": "Grafaiai",
     "num": 945,
-    "tier": "ZU",
+    "tier": "NU",
     "forme": "",
     "types": [
       "poison",
@@ -96012,7 +94675,7 @@
   {
     "name": "Houndstone",
     "num": 972,
-    "tier": "PU",
+    "tier": "NU",
     "forme": "",
     "types": [
       "ghost"
@@ -96115,7 +94778,7 @@
   {
     "name": "Flamigo",
     "num": 973,
-    "tier": "PUBL",
+    "tier": "NU",
     "forme": "",
     "types": [
       "flying",
@@ -96923,7 +95586,7 @@
   {
     "name": "Dudunsparce",
     "num": 982,
-    "tier": "ZUBL",
+    "tier": "NU",
     "forme": "",
     "types": [
       "normal"
@@ -96951,145 +95614,6 @@
     "baseStatTotal": 520,
     "effectiveBaseStatTotal": 435,
     "spritePath": "/sprite_folder/sprites/982.png",
-    "defensiveTypes": {
-      "Bug": 1,
-      "Dark": 1,
-      "Dragon": 1,
-      "Electric": 1,
-      "Fairy": 1,
-      "Fighting": 2,
-      "Fire": 1,
-      "Flying": 1,
-      "Ghost": 0,
-      "Grass": 1,
-      "Ground": 1,
-      "Ice": 1,
-      "Normal": 1,
-      "Poison": 1,
-      "Psychic": 1,
-      "Rock": 1,
-      "Steel": 1,
-      "Stellar": 1,
-      "Water": 1
-    }
-  },
-  {
-    "name": "Dudunsparce-Three-Segment",
-    "num": 982,
-    "tier": "ZUBL",
-    "forme": "Three-Segment",
-    "types": [
-      "normal"
-    ],
-    "abilities": {
-      "0": "Serene Grace",
-      "1": "Run Away",
-      "H": "Rattled"
-    },
-    "learnset": [
-      "body-slam",
-      "take-down",
-      "double-edge",
-      "flamethrower",
-      "ice-beam",
-      "blizzard",
-      "hyper-beam",
-      "solar-beam",
-      "thunderbolt",
-      "thunder",
-      "earthquake",
-      "dig",
-      "toxic",
-      "agility",
-      "screech",
-      "defense-curl",
-      "fire-blast",
-      "amnesia",
-      "glare",
-      "rest",
-      "rock-slide",
-      "substitute",
-      "thief",
-      "curse",
-      "flail",
-      "spite",
-      "protect",
-      "scary-face",
-      "mud-slap",
-      "outrage",
-      "sandstorm",
-      "endure",
-      "rollout",
-      "sleep-talk",
-      "pain-split",
-      "baton-pass",
-      "rain-dance",
-      "sunny-day",
-      "psych-up",
-      "ancient-power",
-      "shadow-ball",
-      "uproar",
-      "facade",
-      "helping-hand",
-      "yawn",
-      "endeavor",
-      "hyper-voice",
-      "rock-tomb",
-      "mud-shot",
-      "poison-tail",
-      "calm-mind",
-      "roost",
-      "gyro-ball",
-      "tailwind",
-      "poison-jab",
-      "air-slash",
-      "dragon-rush",
-      "earth-power",
-      "giga-impact",
-      "zen-headbutt",
-      "stone-edge",
-      "stealth-rock",
-      "heavy-slam",
-      "coil",
-      "stored-power",
-      "hex",
-      "bulldoze",
-      "dragon-tail",
-      "wild-charge",
-      "drill-run",
-      "hurricane",
-      "boomburst",
-      "throat-chop",
-      "lunge",
-      "smart-strike",
-      "stomping-tantrum",
-      "body-press",
-      "breaking-swipe",
-      "scale-shot",
-      "skitter-smack",
-      "dual-wingbeat",
-      "tera-blast",
-      "ice-spinner",
-      "pounce",
-      "chilling-water",
-      "hyper-drill"
-    ],
-    "baseStats": {
-      "hp": 125,
-      "atk": 100,
-      "def": 80,
-      "spa": 85,
-      "spd": 75,
-      "spe": 55
-    },
-    "isTeraCaptain": false,
-    "abilityDefenses": {},
-    "tierCost": 3,
-    "teraCost": 0,
-    "cost": 3,
-    "baseStatTotal": 520,
-    "effectiveBaseStatTotal": 435,
-    "spritePath": "/sprite_folder/sprites/982_Three-Segment.png",
     "defensiveTypes": {
       "Bug": 1,
       "Dark": 1,
@@ -97390,7 +95914,7 @@
   {
     "name": "Slither Wing",
     "num": 988,
-    "tier": "RU",
+    "tier": "UU",
     "forme": "",
     "types": [
       "bug",
@@ -97604,7 +96128,7 @@
   {
     "name": "Iron Jugulis",
     "num": 993,
-    "tier": "RUBL",
+    "tier": "UU",
     "forme": "",
     "types": [
       "dark",
@@ -98188,7 +96712,7 @@
   {
     "name": "Wo-Chien",
     "num": 1001,
-    "tier": "PU",
+    "tier": "NU",
     "forme": "",
     "types": [
       "dark",
@@ -98392,59 +96916,6 @@
     }
   },
   {
-    "name": "Roaring Moon",
-    "num": 1005,
-    "tier": "OU",
-    "forme": "",
-    "types": [
-      "dragon",
-      "dark"
-    ],
-    "abilities": {
-      "0": "Protosynthesis"
-    },
-    "learnset": [],
-    "baseStats": {
-      "hp": 105,
-      "atk": 139,
-      "def": 71,
-      "spa": 55,
-      "spd": 101,
-      "spe": 119
-    },
-    "isTeraCaptain": false,
-    "abilityDefenses": {},
-    "learnsetFailed": true,
-    "tierCost": 10,
-    "teraCost": 0,
-    "cost": 10,
-    "baseStatTotal": 590,
-    "effectiveBaseStatTotal": 535,
-    "spritePath": "/sprite_folder/sprites/1005.png",
-    "defensiveTypes": {
-      "Bug": 2,
-      "Dark": 0.5,
-      "Dragon": 2,
-      "Electric": 0.5,
-      "Fairy": 4,
-      "Fighting": 2,
-      "Fire": 0.5,
-      "Flying": 1,
-      "Ghost": 0.5,
-      "Grass": 0.5,
-      "Ground": 1,
-      "Ice": 2,
-      "Normal": 1,
-      "Poison": 1,
-      "Psychic": 0,
-      "Rock": 1,
-      "Steel": 1,
-      "Stellar": 1,
-      "Water": 0.5,
-      "prankster": 0
-    }
-  },
-  {
     "name": "Iron Valiant",
     "num": 1006,
     "tier": "OU",
@@ -98604,7 +97075,7 @@
   {
     "name": "Dipplin",
     "num": 1011,
-    "tier": "ZU",
+    "tier": "NFE",
     "forme": "",
     "types": [
       "grass",
@@ -98945,61 +97416,6 @@
     }
   },
   {
-    "name": "Sinistcha-Masterpiece",
-    "num": 1013,
-    "tier": "UU",
-    "forme": "Masterpiece",
-    "types": [
-      "grass",
-      "ghost"
-    ],
-    "abilities": {
-      "0": "Hospitality",
-      "H": "Heatproof"
-    },
-    "learnset": [],
-    "baseStats": {
-      "hp": 71,
-      "atk": 60,
-      "def": 106,
-      "spa": 121,
-      "spd": 80,
-      "spe": 70
-    },
-    "isTeraCaptain": false,
-    "abilityDefenses": {},
-    "learnsetFailed": true,
-    "tierCost": 8,
-    "teraCost": 0,
-    "cost": 8,
-    "baseStatTotal": 508,
-    "effectiveBaseStatTotal": 448,
-    "spritePath": "/sprite_folder/sprites/1013_Masterpiece.png",
-    "defensiveTypes": {
-      "powder": 0,
-      "Bug": 1,
-      "Dark": 2,
-      "Dragon": 1,
-      "Electric": 0.5,
-      "Fairy": 1,
-      "Fighting": 0,
-      "Fire": 2,
-      "Flying": 2,
-      "Ghost": 2,
-      "Grass": 0.5,
-      "Ground": 0.5,
-      "Ice": 2,
-      "Normal": 0,
-      "Poison": 1,
-      "Psychic": 1,
-      "Rock": 1,
-      "Steel": 1,
-      "Stellar": 1,
-      "Water": 0.5,
-      "trapped": 0
-    }
-  },
-  {
     "name": "Okidogi",
     "num": 1014,
     "tier": "UUBL",
@@ -99233,7 +97649,7 @@
   {
     "name": "Fezandipiti",
     "num": 1016,
-    "tier": "RU",
+    "tier": "UU",
     "forme": "",
     "types": [
       "poison",
@@ -99518,7 +97934,7 @@
   {
     "name": "Ogerpon-Cornerstone",
     "num": 1017,
-    "tier": "UU",
+    "tier": "UUBL",
     "forme": "Cornerstone",
     "types": [
       "grass",

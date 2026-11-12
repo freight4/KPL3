@@ -1,0 +1,18 @@
+.profile-container {
+  background: transparent;
+  border: none;
+}
+
+.profile-dropdown {
+  background: #1c1c1c;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Remove the default horizontal rule styling */
+.profile-dropdown hr {
+  border: none;
+  border-top: 1px solid #444;
+}

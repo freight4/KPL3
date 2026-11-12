@@ -1,7 +1,41 @@
-<h1 style="text-align:center; margin:20px 0;  color: #ffffff; font-family: 'Pokemon';">Pokémon League Draft</h1>
+<div class="header">
+
+  <div class="profile-container">
+
+    <button class="profile-button" (click)="toggleProfile()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="40"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round">
+
+        <circle cx="12" cy="8" r="4"></circle>
+        <path d="M5 21a7 7 0 0 1 14 0"></path>
+      </svg>
+    </button>
+
+    @if (profileOpen) {
+      <div class="profile-dropdown">
+        <app-profile></app-profile>
+      </div>
+    }
+
+  </div>
+
+</div>
+
+<h1 style="text-align: center; color: #EEF0F2;">
+  Pokémon League Draft
+</h1>
 
 <div class="tabs">
   <button routerLink="/draft">Draft</button>
+  <button routerLink="/draft">Draft Board</button>
   <button routerLink="/free-agents">Free Agents</button>
   <button routerLink="/team-builder">Team Builder</button>
   <button routerLink="/schedule_builder">Schedule Builder</button>

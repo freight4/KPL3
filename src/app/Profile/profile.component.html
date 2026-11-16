@@ -3,9 +3,10 @@
   <div class="profile-dropdown">
 
     <div class="profile-info">
-      <strong>Team Name</strong>
-      <span>Discord User</span>
-    </div>
+    <strong>Team Name: {{ teamName }}</strong>
+    <br>
+    <span>Discord Name: {{ discordName }}</span>
+  </div>
 
     <hr>
 
@@ -13,10 +14,33 @@
       Profile
     </button>
 
-    <button (click)="logout()">
-      Logout
+    <button *ngIf="isLoggedIn" (click)="logout()">
+    Logout
     </button>
 
+    <button *ngIf="!isLoggedIn" (click)="login()">
+    Login
+    </button>
+
+  </div>
+
+</div>
+
+<!-- Profile Overlay -->
+<div class="profile-overlay" *ngIf="showProfile">
+
+  <div class="profile-modal">
+
+    <button class="close-button" (click)="closeProfile()">
+      ✕
+    </button>
+
+    <h2>Profile</h2>
+
+    <p>Discord Name: {{ discordName }}</p>
+    <p>Team Name: {{ teamName }}</p> 
+    <p>Current Standing: {{ currentStanding }}</p> 
+    <p>Current Record: {{ currentRecord }}</p> 
   </div>
 
 </div>

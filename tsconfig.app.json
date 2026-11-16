@@ -2,10 +2,10 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
+    "rootDir": "./src",
     "types": [],
-    "baseUrl": "./",
     "paths": {
-      "@classes/*": ["src/app/classes/*"]
+      "@classes/*": ["./src/app/classes/*"]
     }
   },
   "include": [

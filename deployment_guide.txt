@@ -1,0 +1,55 @@
+
+========================================
+             Run Locally
+========================================
+Step 1: 
+Open 1 git bash terminal and one powershell terminal in vscode 
+
+Step 2:
+In the git bash terminal run this command: 
+python -m uvicorn main:app --reload --port 8000
+
+Step 3:
+In the powershell terminal run the UI:
+ng serve --port 4200
+
+
+
+========================================
+             Build Docker Image
+======================================== 
+Command:
+docker build -t kpl-angular:latest .
+
+Argument
+kpl-angular = the name of the image you want to give it
+latest = the tag for the image which is used for version control 
+. = used for current directory (should normally be the same each time)
+
+========================================
+             See if Docker Image built properly
+========================================
+Command: 
+docker images 
+
+Run your Docker Images:
+Use Docker Desktop to run. It is far easier to run and stop 
+
+
+
+========================================
+    AWS Lightsail Pushing Container 
+========================================
+Command: 
+aws lightsail push-container-image \
+    --region us-east-2 \
+    --service-name kpl-frontend \
+    --label kpl-angular \
+    --image kpl-angular:latest 
+
+
+Arguments:
+region =  the region our container is in (keep the same always)
+service-name = the container built on AWS (keep the same, if you are to change consult with Dev first)
+label = the name of the docker image your trying to push
+image = the exact name and the version of the image you are trying to push 

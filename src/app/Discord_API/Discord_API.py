@@ -1,177 +1,390 @@
 
-# auth.py
-
 import os
+from dotenv import load_dotenv
 
 import mysql.connector
-from fastapi import APIRouter, HTTPException, Request
-from starlette.responses import RedirectResponse
-from authlib.integrations.starlette_client import OAuth
 
-router = APIRouter(prefix="/auth", tags=["Authentication"])
+from fastapi import FastAPI, Request, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse, RedirectResponse
+
+from starlette.middleware.sessions import SessionMiddleware
+
+from authlib.integrations.starlette_client import OAuth
+from authlib.integrations.base_client.errors import MismatchingStateError
+from Schema import TeamCreate, TeamNameRequest
+
+import secrets
+import time
+from fastapi.responses import HTMLResponse
+import json
+
+# ==================================================
+# 1. ENVIRONMENT VARIABLES
+# ==================================================
+
+load_dotenv()
+
+DISCORD_CLIENT_ID = os.getenv("DISCORD_CLIENT_ID")
+DISCORD_CLIENT_SECRET = os.getenv("DISCORD_CLIENT_SECRET")
+DISCORD_REDIRECT_URI = os.getenv("DISCORD_REDIRECT_URI")
+
+SESSION_SECRET = os.getenv("SESSION_SECRET")
+
+FRONTEND_URL = os.getenv(
+    "FRONTEND_URL",
+    "http://localhost:8501"
+)
+
+required_variables = {
+    "DISCORD_CLIENT_ID": DISCORD_CLIENT_ID,
+    "DISCORD_CLIENT_SECRET": DISCORD_CLIENT_SECRET,
+    "DISCORD_REDIRECT_URI": DISCORD_REDIRECT_URI,
+    "SESSION_SECRET": SESSION_SECRET
+}
+
+missing = [
+    name for name, value in required_variables.items()
+    if not value
+]
+
+if missing:
+    raise RuntimeError(
+        f"Missing environment variables: {', '.join(missing)}"
+    )
+
+
+# ==================================================
+# 2. FASTAPI CONFIGURATION
+# ==================================================
+
+app = FastAPI(title="KPL Discord Authentication API")
+login_tickets = {}
+app.add_middleware(
+    SessionMiddleware,
+    secret_key=SESSION_SECRET,
+    session_cookie="kpl_session",
+    same_site="lax",
+    https_only=False,  # Local HTTP development only
+    max_age=604800
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:8501",
+        "http://localhost:4200"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
+
+
+# ==================================================
+# 3. DISCORD OAUTH CONFIGURATION
+# ==================================================
 
 oauth = OAuth()
 
 oauth.register(
     name="discord",
-    client_id=os.environ["DISCORD_CLIENT_ID"],
-    client_secret=os.environ["DISCORD_CLIENT_SECRET"],
+    client_id=DISCORD_CLIENT_ID,
+    client_secret=DISCORD_CLIENT_SECRET,
+
     authorize_url="https://discord.com/oauth2/authorize",
     access_token_url="https://discord.com/api/oauth2/token",
-    api_base_url="https://discord.com/api/",
-    client_kwargs={"scope": "identify"},
+    api_base_url="https://discord.com/api/v10/",
+
+    client_kwargs={
+        "scope": "identify email"
+    }
 )
 
 
-@router.get("/discord/login")
-async def discord_login(request: Request):
-    """Redirect the user to Discord to authenticate."""
-    redirect_uri = os.environ["DISCORD_REDIRECT_URI"]
+# ==================================================
+# 4. MYSQL CONNECTION
+# ==================================================
 
-    return await oauth.discord.authorize_redirect(
-        request,
-        redirect_uri,
+def get_db_connection():
+
+    return mysql.connector.connect(
+        host=os.getenv("KPL_DB_HOST"),
+        user=os.getenv("KPL_DB_USERNAME"),
+        password=os.getenv("KPL_DB_PASSWORD"),
+        database="dbmaster"
     )
 
 
-@router.get("/discord/callback")
-async def discord_callback(request: Request):
-    """Authenticate with Discord and find or create the user's team."""
+# ==================================================
+# 5. SAVE OR RETRIEVE KPL USER
+# ==================================================
 
-    # Exchange the authorization code for an access token.
-    token = await oauth.discord.authorize_access_token(request)
 
-    # Fetch the authenticated Discord user's identity.
-    response = await oauth.discord.get("users/@me", token=token)
-    discord_user = response.json()
-
-    discord_id = str(discord_user["id"])
-    discord_name = discord_user["username"]
-
-    conn = None
-    cursor = None
+def save_or_get_team(id, username):
+    connection = get_db_connection()
+    cursor = connection.cursor(dictionary=True)
 
     try:
-        conn = get_db_connection()
-        cursor = conn.cursor(dictionary=True)
-
-        # Check whether this Discord account already has a team.
         cursor.execute(
-            """
-            SELECT discord_id, discord_name, team_name, role
-            FROM Team_Info
-            WHERE discord_id = %s
-            """,
-            (discord_id,),
+            "SELECT * FROM Team_Info WHERE discord_id = %s",
+            (id,)
         )
-        team = cursor.fetchone()
+        existing_user = cursor.fetchone()
 
-        if team is None:
-            # Create a default team for a new KPL user.
-            cursor.execute(
-                """
-                INSERT INTO Team_Info
-                    (discord_id, discord_name, team_name, role)
-                VALUES (%s, %s, %s, %s)
-                """,
-                (
-                    discord_id,
-                    discord_name,
-                    f"{discord_name}'s Team",
-                    "captain",
-                ),
-            )
-            conn.commit()
-
-        else:
-            # Keep the existing team, but update the Discord username.
+        if existing_user:
             cursor.execute(
                 """
                 UPDATE Team_Info
                 SET discord_name = %s
                 WHERE discord_id = %s
                 """,
-                (discord_name, discord_id),
+                (username, id)
             )
-            conn.commit()
+        else:
+            cursor.execute(
+                """
+                INSERT INTO Team_Info
+                (discord_id, discord_name, team_name, role)
+                VALUES (%s, %s, NULL, 'Player')
+                """,
+                (id, username)
+            )
 
-        # Establish the user's authenticated session.
-        request.session.clear()
-        request.session["discord_id"] = discord_id
-
-        frontend_url = os.environ["FRONTEND_URL"]
-
-        return RedirectResponse(
-            url=frontend_url,
-            status_code=303,
-        )
-
-    except mysql.connector.Error:
-        if conn is not None:
-            conn.rollback()
-
-        raise HTTPException(
-            status_code=500,
-            detail="Unable to retrieve or create your KPL team.",
-        )
-
-    finally:
-        if cursor is not None:
-            cursor.close()
-        if conn is not None:
-            conn.close()
-
-
-@router.get("/me")
-async def get_current_user(request: Request):
-    """Return the current logged-in user's KPL team."""
-
-    discord_id = request.session.get("discord_id")
-
-    if not discord_id:
-        raise HTTPException(
-            status_code=401,
-            detail="Not logged in. Please sign in with Discord.",
-        )
-
-    conn = None
-    cursor = None
-
-    try:
-        conn = get_db_connection()
-        cursor = conn.cursor(dictionary=True)
+        connection.commit()
 
         cursor.execute(
             """
-            SELECT discord_id, discord_name, team_name, role
+            SELECT unique_id, discord_id, discord_name, team_name,
+                   guest_name, role, created_at
             FROM Team_Info
             WHERE discord_id = %s
             """,
-            (discord_id,),
+            (id,)
         )
+
         team = cursor.fetchone()
 
-        if team is None:
-            request.session.clear()
-            raise HTTPException(
-                status_code=404,
-                detail="KPL team not found.",
-            )
+        if not team:
+            raise Exception("Unable to retrieve team information.")
+
+        if team.get("created_at"):
+            team["created_at"] = team["created_at"].isoformat()
+
+        # Determine whether the user needs to create a team name
+        team["needs_team_name"] = not bool(team.get("team_name"))
 
         return team
 
-    except mysql.connector.Error:
+    finally:
+        cursor.close()
+        connection.close()
+
+
+
+# ==================================================
+# 6. DISCORD LOGIN
+# ==================================================
+
+@app.get("/auth/discord/login")
+async def discord_login(request: Request):
+
+    return await oauth.discord.authorize_redirect(
+        request,
+        DISCORD_REDIRECT_URI
+    )
+
+
+# ==================================================
+# 7. DISCORD CALLBACK
+# ==================================================
+
+
+@app.get("/auth/discord/callback")
+async def discord_callback(request: Request):
+
+    # Exchange authorization code for access token
+    token = await oauth.discord.authorize_access_token(request)
+
+    # Get authenticated Discord user information
+    response = await oauth.discord.get(
+        "users/@me",
+        token=token
+    )
+
+    discord_user = response.json()
+
+    # Extract Discord information
+    user_profile_name = (
+        discord_user.get("global_name")
+        or discord_user.get("username")
+    )
+
+    user_email = discord_user.get("email")
+    discord_id = discord_user.get("id")
+
+    # Save or retrieve user in MySQL
+    team = save_or_get_team(
+        discord_id,
+        user_profile_name
+    )
+
+    # Prepare user information
+    user_data = {
+        "discord_id": discord_id,
+        "discord_name": user_profile_name,
+        "email": user_email,
+        "team_name": team.get("team_name"),
+        "is_new_user": team.get("is_new_user")
+    }
+
+    # Store user information in session
+    request.session["user"] = user_data
+
+    # Safely serialize user information
+    user_json = json.dumps(user_data).replace("<", "\\u003c")
+
+    # Send information back to original Angular tab
+    html = f"""
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>KPL Discord Authentication</title>
+        </head>
+        <body>
+            <h2>Discord Authentication Successful!</h2>
+            <p>You can close this tab.</p>
+
+            <script>
+                if (window.opener) {{
+
+                    window.opener.postMessage(
+                        {{
+                            type: "KPL_DISCORD_AUTH",
+                            user: {user_json}
+                        }},
+                        "http://localhost:4200"
+                    );
+
+                    window.close();
+
+                }} else {{
+                    document.body.innerHTML +=
+                        "<p>Unable to communicate with the original KPL tab.</p>";
+                }}
+            </script>
+        </body>
+    </html>
+    """
+
+    return HTMLResponse(content=html)
+
+
+
+########################################################
+# ==================================================
+# 8. GET CURRENT AUTHENTICATED USER
+# ==================================================
+
+@app.get("/auth/me")
+async def get_current_user(request: Request):
+
+    user = request.session.get("user")
+
+    if not user:
         raise HTTPException(
-            status_code=500,
-            detail="Unable to retrieve your KPL team.",
+            status_code=401,
+            detail="Not authenticated"
         )
 
+    return {
+        "discord_id": user.get("discord_id"),
+        "discord_name": user.get("discord_name"),
+        "email": user.get("email"),
+        "team_name": user.get("team_name")
+    }
+
+
+# ==================================================
+# 9. LOGOUT
+# ==================================================
+
+@app.post("/auth/logout")
+async def logout(request: Request):
+
+    request.session.clear()
+
+    return {
+        "message": "Successfully logged out.",
+        "authenticated": False
+    }
+
+
+# ==================================================
+# 10. Team Name Generator 
+# ==================================================
+
+
+@app.post("/auth/team-name")
+async def update_team_name(
+    request: Request,
+    data: TeamNameRequest
+):
+
+    # Verify user is authenticated
+    user = request.session.get("user")
+
+    if not user:
+        raise HTTPException(
+            status_code=401,
+            detail="Not authenticated"
+        )
+
+    # Validate team name
+    team_name = data.team_name.strip()
+
+    if not team_name:
+        raise HTTPException(
+            status_code=400,
+            detail="Team name cannot be empty."
+        )
+
+    if len(team_name) > 100:
+        raise HTTPException(
+            status_code=400,
+            detail="Team name cannot exceed 100 characters."
+        )
+
+    connection = get_db_connection()
+    cursor = connection.cursor()
+
+    try:
+
+        # Update the authenticated user's team name
+        cursor.execute(
+            """
+            UPDATE Team_Info
+            SET team_name = %s
+            WHERE discord_id = %s
+            """,
+            (team_name, user["discord_id"])
+        )
+
+        connection.commit()
+
+        # Update session
+        user["team_name"] = team_name
+        request.session["user"] = user
+
+        return {
+            "success": True,
+            "team_name": team_name
+        }
+
     finally:
-        if cursor is not None:
-            cursor.close()
-        if conn is not None:
-            conn.close()
+
+        cursor.close()
+        connection.close()
 
 
-# Import your existing db_connection connection function.
-from db_connection import get_db_connection
+

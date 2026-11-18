@@ -8,6 +8,8 @@ Open 1 git bash terminal and one powershell terminal in vscode
 Step 2:
 In the git bash terminal run this command: 
 python -m uvicorn main:app --reload --port 8000
+-Main can be replaced with a specific Python Fast API file if applicable 
+
 
 Step 3:
 In the powershell terminal run the UI:

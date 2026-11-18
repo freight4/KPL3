@@ -15,24 +15,32 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  // Set Guest Information
+  // Guest Login
   setGuest() {
     this.teamName = 'Guest';
     this.discordName = 'Guest';
   }
 
-  // Retrieve Discord Information from FastAPI
-  getDiscordInfo(): Observable<any> {
-    return this.http.get<any>(`${this.API_URL}/auth/me`, {
-      withCredentials: true
-    });
-  }
-
   // Store Discord Information
   setDiscordInfo(response: any) {
-    this.teamName = response.team_name;
-    this.discordName = response.discord_name;
+    this.teamName = response.team_name || '';
+    this.discordName = response.discord_name || '';
   }
 
-  
+  // Save New Team Name
+  updateTeamName(teamName: string): Observable<any> {
+    return this.http.post<any>(
+      `${this.API_URL}/auth/team-name`,
+      { team_name: teamName },
+      { withCredentials: true }
+    );
+  }
+
+  // Retrieve Discord Information
+  getDiscordInfo(): Observable<any> {
+    return this.http.get<any>(
+      `${this.API_URL}/auth/me`,
+      { withCredentials: true }
+    );
+  }
 }

@@ -1,0 +1,142 @@
+
+:host {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  display: block;
+  z-index: 9999;
+}
+
+.create-team-page {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  background: #080a10;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.create-team-background {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(72, 100, 179, 0.25),
+      transparent 45%
+    ),
+    linear-gradient(135deg, #080a10, #111827 55%, #080a10);
+}
+
+.create-team-content {
+  position: relative;
+  z-index: 1;
+  width: calc(100% - 40px);
+  max-width: 520px;
+  margin: auto;
+  padding: 30px 0;
+  text-align: center;
+}
+
+.create-team-header {
+  margin-bottom: 35px;
+}
+
+.create-team-header h1 {
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px rgba(72, 100, 179, 0.65);
+}
+
+.create-team-header p {
+  color: #aab5d0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.create-team-card {
+  padding: 38px;
+  background: rgba(20, 25, 38, 0.96);
+  border: 1px solid rgba(100, 125, 190, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+}
+
+.create-team-card h2 {
+  margin-top: 0;
+  font-size: 1.7rem;
+}
+
+.create-team-card p {
+  color: #aab1c2;
+  line-height: 1.5;
+}
+
+.team-input {
+  margin-top: 25px;
+  text-align: left;
+}
+
+.team-input label {
+  display: block;
+  margin-bottom: 9px;
+  color: #dce3f5;
+  font-weight: 600;
+}
+
+.team-input input {
+  width: 100%;
+  padding: 14px;
+  box-sizing: border-box;
+  background: #0d111b;
+  color: white;
+  border: 1px solid #39445d;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.team-input input:focus {
+  outline: none;
+  border-color: #4864b3;
+  box-shadow: 0 0 0 3px rgba(72, 100, 179, 0.2);
+}
+
+.create-button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  background: #4864b3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.create-button:hover:not(:disabled) {
+  background: #5877ce;
+  transform: translateY(-2px);
+}
+
+.create-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #ff7777 !important;
+}
+
+@media (max-width: 600px) {
+  .create-team-card {
+    padding: 28px 22px;
+  }
+}

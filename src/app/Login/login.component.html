@@ -1,27 +1,60 @@
-
 <div class="login-page">
 
-  <div class="login-card">
+  <div class="login-background"></div>
 
-    <h1>Pokémon League</h1>
-    <p class="subtitle">Welcome to the KPL!</p>
+  <div class="login-content">
 
-    <div class="login-options">
-
-      <button class="discord-button" (click)="loginWithDiscord()">
-        Login with Discord
-      </button>
-
-      <div class="divider">
-        <span>OR</span>
-      </div>
-
-      <button class="guest-button" (click)="continueAsGuest()">
-        Continue as Guest
-      </button>
-
+    <div class="login-header">
+      <h1>POKÉMON LEAGUE</h1>
+      <p>Welcome to the KPL</p>
     </div>
 
-  </div>
+    @if (!showTeamNameForm) {
+      <div class="login-card">
+        <h2>Enter the League</h2>
+        <p>Sign in with Discord or continue as a guest.</p>
 
+        <button class="discord-button" (click)="loginWithDiscord()">
+          Login with Discord
+        </button>
+
+        <button class="guest-button" (click)="continueAsGuest()">
+          Continue as Guest
+        </button>
+      </div>
+    }
+
+    @if (showTeamNameForm) {
+      <div class="login-card team-registration">
+        <h2>Create Your Team</h2>
+        <p>Discord authentication successful! Choose a team name to get started.</p>
+
+        <div class="team-input">
+          <label for="teamName">Team Name</label>
+          <input
+            id="teamName"
+            type="text"
+            [(ngModel)]="newTeamName"
+            name="teamName"
+            placeholder="Enter your team name"
+            maxlength="100"
+            [disabled]="isSaving"
+          />
+        </div>
+
+        @if (errorMessage) {
+          <p class="error-message">{{ errorMessage }}</p>
+        }
+
+        <button
+          class="create-team-button"
+          (click)="submitTeamName()"
+          [disabled]="isSaving || !newTeamName.trim()"
+        >
+          {{ isSaving ? 'Creating Team...' : 'Create Team' }}
+        </button>
+      </div>
+    }
+
+  </div>
 </div>

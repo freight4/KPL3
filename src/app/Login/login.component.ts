@@ -1,18 +1,25 @@
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { UserService } from '../User/user';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent implements OnInit, OnDestroy {
 
   private API_URL = 'http://localhost:8000';
+
+  // Team Registration Variables
+  showTeamNameForm = false;
+  newTeamName = '';
+  isSaving = false;
+  errorMessage = '';
 
   constructor(
     private router: Router,
@@ -35,29 +42,66 @@ export class LoginComponent implements OnInit, OnDestroy {
     );
   }
 
-  // Receive Discord information from authentication tab
   handleDiscordResponse = (event: MessageEvent) => {
+  if (event.origin !== this.API_URL) return;
+  if (event.data?.type !== 'KPL_DISCORD_AUTH') return;
 
-    if (event.origin !== this.API_URL) return;
+  const response = event.data.user;
 
-    if (event.data?.type === 'KPL_DISCORD_AUTH') {
+  this.userService.setDiscordInfo(response);
 
-      const response = event.data.user;
+  if (response.needs_team_name || !response.team_name) {
+    this.router.navigateByUrl('/create-team');
+  } else {
+    this.router.navigateByUrl('/draft');
+  }
+};
 
-      this.userService.setDiscordInfo(response);
+  // Submit New Team Name
+  submitTeamName() {
 
-      console.log('Team Name:', this.userService.teamName);
-      console.log('Discord Name:', this.userService.discordName);
-
-      this.router.navigateByUrl('/draft');
+    if (!this.newTeamName.trim()) {
+      this.errorMessage = 'Please enter a team name.';
+      return;
     }
-  };
+
+    this.isSaving = true;
+    this.errorMessage = '';
+
+    this.userService.updateTeamName(this.newTeamName.trim()).subscribe({
+
+      next: (response) => {
+
+        this.userService.teamName = response.team_name;
+
+        console.log('Team Name:', this.userService.teamName);
+        console.log('Discord Name:', this.userService.discordName);
+
+        this.isSaving = false;
+        this.router.navigateByUrl('/draft');
+
+      },
+
+      error: (error) => {
+
+        console.error('Error saving team name:', error);
+
+        this.errorMessage = 'Unable to save your team name. Please try again.';
+        this.isSaving = false;
+
+      }
+
+    });
+
+  }
 
   // Guest Login
   continueAsGuest() {
-    this.userService.setGuest();
-    this.router.navigateByUrl('/draft');
-  }
 
+    this.userService.setGuest();
+
+    this.router.navigateByUrl('/draft');
+
+  }
 
 }

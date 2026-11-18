@@ -1,0 +1,52 @@
+
+<div class="create-team-page">
+
+  <div class="create-team-background"></div>
+
+  <div class="create-team-content">
+
+    <div class="create-team-header">
+      <h1>POKÉMON LEAGUE</h1>
+      <p>Welcome to the League</p>
+    </div>
+
+    <div class="create-team-card">
+
+      <h2>Enter Team Name</h2>
+
+      <p>
+        You're almost ready! Choose a name for your team
+        before entering the league.
+      </p>
+
+      <div class="team-input">
+        <label for="teamName">Team Name</label>
+
+        <input
+          id="teamName"
+          type="text"
+          [(ngModel)]="teamName"
+          name="teamName"
+          placeholder="Enter your team name"
+          maxlength="100"
+          [disabled]="isSaving"
+          (keyup.enter)="submitTeamName()"
+        />
+      </div>
+
+      @if (errorMessage) {
+        <p class="error-message">{{ errorMessage }}</p>
+      }
+
+      <button
+        class="create-button"
+        (click)="submitTeamName()"
+        [disabled]="isSaving || !teamName.trim()"
+      >
+        {{ isSaving ? 'Creating Team...' : 'Create Team' }}
+      </button>
+
+    </div>
+
+  </div>
+</div>

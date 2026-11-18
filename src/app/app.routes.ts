@@ -4,13 +4,16 @@ import { FreeAgentsComponent } from './Free_Agency/free-agents.component';
 import { TeamBuilderComponent } from './Team_Builder/team-builder.component';
 import { ScheduleBuilderComponent } from './Schedule_Builder/schedule_builder.component';
 import { ProfileComponent } from './Profile/profile.component';
-
+import { LoginComponent } from './Login/login.component';
+import { CreateTeamComponent } from './create-team/create-team.component';
 
 export const routes: Routes = [
+  { path: 'login', component: LoginComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'draft', component: DraftComponent },
   { path: 'free-agents', component: FreeAgentsComponent },
   { path: 'team-builder', component: TeamBuilderComponent },
   { path: 'schedule_builder', component: ScheduleBuilderComponent },
   { path: 'profile', component:ProfileComponent},
-  { path: '', redirectTo: 'draft', pathMatch: 'full' }
+  { path: 'create-team', component:CreateTeamComponent}
 ];

@@ -1,0 +1,228 @@
+
+:host {
+  display: block;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 9999;
+}
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.create-team-page {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  background: transparent;
+}
+
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.create-team-background {
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      #e53935 0%,
+      #c62828 46%,
+      #080808 46%,
+      #080808 54%,
+      #ffffff 54%,
+      #e8e8e8 100%
+    );
+}
+
+/* Optional Poké Ball center circle */
+.create-team-background::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border: 12px solid #080808;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    #ffffff 0%,
+    #eeeeee 48%,
+    #bdbdbd 70%,
+    #222222 72%,
+    #111111 100%
+  );
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.create-team-content {
+  position: relative;
+  z-index: 1;
+  width: calc(100% - 40px);
+  max-width: 520px;
+  margin: auto;
+  padding: 30px 0;
+  text-align: center;
+}
+
+/* =========================================
+   CREATE TEAM CARD
+========================================= */
+
+.create-team-card {
+  padding: 38px;
+  background: rgba(0, 0, 0, 0.466);
+  border:rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  box-shadow: none;
+}
+
+.create-team-card h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.create-team-card p {
+  color: #ffffff;
+  line-height: 1.5;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================================
+   TEAM INPUT
+========================================= */
+
+.team-input {
+  margin-top: 25px;
+  text-align: left;
+}
+
+.team-input label {
+  display: block;
+  margin-bottom: 9px;
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.team-input input {
+  width: 100%;
+  padding: 14px;
+  box-sizing: border-box;
+
+  background: rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 12px;
+
+  font-size: 1rem;
+  transition: all 0.25s ease;
+}
+
+.team-input input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.team-input input:focus {
+  outline: none;
+  background: rgba(0, 0, 0, 0.45);
+  border-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================
+   CREATE BUTTON
+========================================= */
+
+.create-button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px 20px;
+
+  background: rgba(0, 0, 0, 0.35);
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.create-button:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.55);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.create-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   ERROR MESSAGE
+========================================= */
+
+.error-message {
+  color: #ffdddd !important;
+  font-weight: 600;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .create-team-card {
+    padding: 28px 22px;
+  }
+
+  .create-team-background::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  .create-team-header {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-height: 650px) {
+  .create-team-content {
+    padding: 20px 0;
+  }
+
+  .create-team-header {
+    margin-bottom: 15px;
+  }
+
+  .create-team-card {
+    padding: 20px;
+  }
+}

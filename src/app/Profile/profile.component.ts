@@ -46,8 +46,10 @@ export class ProfileComponent {
   logout() {
     console.log('Logging out');
     this.isLoggedIn = false; 
+    
     this.userService.teamName = "";
     this.userService.discordName = "";
+    window.location.href = 'http://localhost:4200/login';
     // Add Discord logout API integration here.
 
     

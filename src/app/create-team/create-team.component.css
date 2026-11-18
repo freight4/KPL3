@@ -55,14 +55,13 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: linear-gradient(
-    to bottom,
-    #e53935 0%,
-    #e53935 49%,
-    #080808 49%,
-    #080808 51%,
-    #ffffff 51%,
-    #ffffff 100%
+  background: radial-gradient(
+    circle,
+    #ffffff 0%,
+    #eeeeee 48%,
+    #bdbdbd 70%,
+    #222222 72%,
+    #111111 100%
   );
   box-shadow: 0 0 45px rgba(0, 0, 0, 0.25);
 }

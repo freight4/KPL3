@@ -1,39 +1,52 @@
 
 <div class="login-page">
 
+  <!-- POKEBALL BACKGROUND -->
   <div class="login-background">
     <div class="background-glow glow-one"></div>
     <div class="background-glow glow-two"></div>
     <div class="background-grid"></div>
   </div>
 
-  <div class="login-content">
+  <!-- POKEBALL TRANSITION OVERLAY -->
+  <app-pokeball-transition
+    [active]="showPokeballAnimation">
+  </app-pokeball-transition>
 
-    <!-- CURVED SEASON TITLE -->
+  <div class="login-content">
 
     <!-- LOGIN CARD -->
     @if (!showTeamNameForm) {
       <div class="login-card">
 
-        <h2>Welcome to the <br> FSPL Season 4! </h2>
+        <h2>Welcome to the <br> FSPL Season 4!</h2>
 
         <p class="card-description">
-          Your journey starts here. <br> Sign in or join as a guest.
+          Your journey starts here. <br>
+          Sign in or join as a guest.
         </p>
 
         <div class="login-actions">
 
-          <button class="discord-button" (click)="loginWithDiscord()">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="currentColor"
-                d="M19.73 5.08A19.8 19.8 0 0 0 14.85 3.5l-.6 1.22a18.4 18.4 0 0 0-5.5 0L8.15 3.5a19.8 19.8 0 0 0-4.88 1.58C.18 9.64-.66 14.1-.24 18.5a19.9 19.9 0 0 0 5.97 3.02l1.28-2.08a12.9 12.9 0 0 1-2.01-.97l.49-.38c3.88 1.8 8.09 1.8 11.92 0l.5.38c-.64.38-1.32.7-2.02.97l1.28 2.08a19.9 19.9 0 0 0 5.97-3.02c.5-5.1-.86-9.52-3.41-13.42ZM8.5 15.5c-1.18 0-2.14-1.08-2.14-2.4s.94-2.4 2.14-2.4 2.16 1.08 2.14 2.4c0 1.32-.94 2.4-2.14 2.4Zm7 0c-1.18 0-2.14-1.08-2.14-2.4s.94-2.4 2.14-2.4 2.16 1.08 2.14 2.4c0 1.32-.94 2.4-2.14 2.4Z"/>
-            </svg>
+          <!-- DISCORD LOGIN -->
+          <button
+            class="discord-button"
+            [disabled]="showPokeballAnimation"
+            (click)="playPokeballAnimation('discord')">
+
             Login with Discord
+
           </button>
 
-          <button class="guest-button" (click)="continueAsGuest()">
+          <!-- GUEST LOGIN -->
+          <button
+            class="guest-button"
+            [disabled]="showPokeballAnimation"
+            (click)="playPokeballAnimation('guest')">
+
             Continue as Guest
             <span>→</span>
+
           </button>
 
         </div>
@@ -41,7 +54,7 @@
       </div>
     }
 
-    <!-- TEAM REGISTRATION -->
+    <!-- TEAM REGISTRATION CARD -->
     @if (showTeamNameForm) {
       <div class="login-card team-registration">
 
@@ -54,6 +67,7 @@
         </p>
 
         <div class="team-input">
+
           <label for="teamName">TEAM NAME</label>
 
           <input
@@ -63,24 +77,27 @@
             name="teamName"
             placeholder="Enter your team name"
             maxlength="100"
-            [disabled]="isSaving"
+            [disabled]="isSaving || showPokeballAnimation"
           />
 
           <span class="input-hint">
             Choose a name that represents your team.
           </span>
+
         </div>
 
         @if (errorMessage) {
           <p class="error-message">{{ errorMessage }}</p>
         }
 
+        <!-- CREATE TEAM BUTTON -->
         <button
           class="create-team-button"
-          (click)="submitTeamName()"
-          [disabled]="isSaving || !newTeamName.trim()"
-        >
+          [disabled]="isSaving || !newTeamName.trim() || showPokeballAnimation"
+          (click)="playPokeballAnimation('team')">
+
           {{ isSaving ? 'Creating Team...' : 'Create Your Team →' }}
+
         </button>
 
         <div class="card-footer">

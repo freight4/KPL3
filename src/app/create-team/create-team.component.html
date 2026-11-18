@@ -1,11 +1,15 @@
 
 <div class="create-team-page">
 
+  <!-- BACKGROUND -->
   <div class="create-team-background"></div>
 
-  <div class="create-team-content">
+  <!-- POKEBALL TRANSITION OVERLAY -->
+  <app-pokeball-transition
+    [active]="showPokeballAnimation">
+  </app-pokeball-transition>
 
-    
+  <div class="create-team-content">
 
     <div class="create-team-card">
 
@@ -16,7 +20,9 @@
         before entering the league.
       </p>
 
+      <!-- TEAM NAME INPUT -->
       <div class="team-input">
+
         <label for="teamName">Team Name</label>
 
         <input
@@ -26,21 +32,25 @@
           name="teamName"
           placeholder="Enter your team name"
           maxlength="100"
-          [disabled]="isSaving"
-          (keyup.enter)="submitTeamName()"
+          [disabled]="isSaving || showPokeballAnimation"
+          (keyup.enter)="playPokeballAnimation()"
         />
+
       </div>
 
+      <!-- ERROR MESSAGE -->
       @if (errorMessage) {
         <p class="error-message">{{ errorMessage }}</p>
       }
 
+      <!-- CREATE TEAM BUTTON -->
       <button
-        class="create-button"
-        (click)="submitTeamName()"
-        [disabled]="isSaving || !teamName.trim()"
-      >
-        {{ isSaving ? 'Creating Team...' : 'Create Team' }}
+      class="create-button"
+      [disabled]="isSaving || !teamName.trim() || showPokeballAnimation"
+      (click)="playPokeballAnimation()">
+
+      {{ isSaving ? 'Creating Team...' : 'Create Team →' }}
+
       </button>
 
     </div>
